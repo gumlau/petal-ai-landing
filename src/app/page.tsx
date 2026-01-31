@@ -4,6 +4,7 @@ import { Features } from "@/components/Features";
 import { Showcase } from "@/components/Showcase";
 import { SocialProof } from "@/components/SocialProof";
 import { CTA } from "@/components/CTA";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
         <CTA />
 
         {/* Placeholder sections for navigation targets */}
-        <section id="pricing" className="min-h-screen w-full pt-16" />
+        <section id="pricing" className="min-h-[50vh] w-full pt-16" />
       </main>
+      <Footer />
     </>
   );
 }
