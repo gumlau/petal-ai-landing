@@ -207,3 +207,34 @@
   - Use dynamic year with getFullYear() to avoid manual updates
   - Consistent link hover pattern: text-muted-foreground hover:text-foreground
 ---
+
+## 2026-01-31 14:15 - US-009
+- What was implemented:
+  - Improved responsive section spacing with mobile-first breakpoints (py-16 sm:py-20 md:py-24)
+  - Reduced header margins on mobile (mb-8 sm:mb-12 md:mb-16)
+  - CTA secondary text now stacks vertically on mobile, inline on desktop
+  - Hero layout uses gap-based spacing instead of margin-based
+  - Showcase mockup heights adapt to screen size (min-h-[320px] sm:min-h-[400px] md:min-h-[500px])
+  - Touch-friendly tap targets: navbar hamburger (44x44), mobile menu links (py-3), tab buttons (min-h-[44px])
+  - Footer social icons now have proper tap targets (h-10 w-10 with hover background)
+  - GPU-accelerated animations with will-change-transform on floating orbs
+  - scroll-padding-top added for smooth scrolling with fixed navbar
+
+- Files changed:
+  - src/app/globals.css - Added scroll-padding-top for navbar offset
+  - src/components/CTA.tsx - Stacked mobile secondary text, GPU animation hints
+  - src/components/Features.tsx - Responsive section spacing
+  - src/components/Footer.tsx - Improved social icon tap targets
+  - src/components/Hero.tsx - Gap-based layout, GPU animation hints
+  - src/components/Navbar.tsx - Larger mobile tap targets
+  - src/components/Showcase.tsx - Responsive heights and tab button sizing
+  - src/components/SocialProof.tsx - Responsive spacing
+
+- **Learnings for future iterations:**
+  - Use min-h-[44px] min-w-[44px] for touch-friendly buttons (iOS/Android recommended minimum)
+  - Add active:bg-color/80 for mobile tap feedback in addition to hover states
+  - will-change-transform optimizes GPU-accelerated animations for floating orbs
+  - scroll-padding-top accounts for fixed navbar height when scrolling to anchors
+  - Gap-based layouts (using gap-8) are more flexible than mt-/mb- for responsive spacing
+  - Test at 320px width (smallest common mobile) to catch tight layouts
+---
