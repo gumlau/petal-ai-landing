@@ -1,0 +1,202 @@
+{
+  "project": "Petal GTD Landing Page",
+  "branchName": "ralph/petal-landing-page",
+  "description": "Modern, clean landing page for Petal GTD - a web-based GTD productivity application inspired by Things 3. Combines clean minimalism with modern animated elements using Aceternity UI components.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Project Setup and Configuration",
+      "description": "As a developer, I need to initialize the Next.js project with all required dependencies and configurations.",
+      "acceptanceCriteria": [
+        "Create Next.js 14+ project with App Router (create-next-app)",
+        "Configure TypeScript strict mode",
+        "Install and configure Tailwind CSS with custom theme",
+        "Install Framer Motion for animations",
+        "Set up project structure: /app, /components, /lib, /constants, /public",
+        "Configure cn utility function for className merging (clsx + tailwind-merge)",
+        "Add Inter font configuration",
+        "Typecheck passes",
+        "Project runs successfully with npm run dev"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Navbar Component",
+      "description": "As a user, I want a clean navigation bar so I can access different sections and the signup button.",
+      "acceptanceCriteria": [
+        "Create sticky navbar component at top of page",
+        "Display Petal GTD logo on the left",
+        "Navigation links: Features, Showcase, Pricing",
+        "Get Started / Sign Up button on the right with primary styling",
+        "Responsive: hamburger menu on mobile",
+        "Subtle background blur effect on scroll",
+        "Smooth scroll to sections on click",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Hero Section",
+      "description": "As a user, I want an impactful hero section that immediately communicates what Petal GTD does and encourages me to sign up.",
+      "acceptanceCriteria": [
+        "Large, bold headline: 'Get Things Done, Beautifully' or similar",
+        "Subheadline explaining the GTD workflow and Things 3-inspired design",
+        "Primary CTA button: 'Start for Free' linking to app signup",
+        "Secondary CTA button: 'Learn More' or 'Watch Demo'",
+        "Hero image/mockup showing the Petal GTD app interface (placeholder)",
+        "Subtle animated background (grid pattern or beams from Aceternity)",
+        "Responsive layout: stacked on mobile, side-by-side on desktop",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": "Use Hero components from Aceternity UI Pro hero/ and backgrounds/"
+    },
+    {
+      "id": "US-004",
+      "title": "Features Section",
+      "description": "As a user, I want to understand the key features of Petal GTD so I can evaluate if it meets my needs.",
+      "acceptanceCriteria": [
+        "Section title: 'Everything you need to stay productive'",
+        "Display 6 key features in a grid or bento layout",
+        "Features: Inbox capture, Today view, Projects & Areas, Upcoming calendar, Tags/filtering, Dark/Light mode",
+        "Each feature has: icon, title, brief description",
+        "Subtle hover animations on feature cards",
+        "Responsive grid: 1 column mobile, 2 columns tablet, 3 columns desktop",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": "Use feature-sections or bento-grids from Aceternity UI Pro"
+    },
+    {
+      "id": "US-005",
+      "title": "App Showcase Section",
+      "description": "As a user, I want to see what the actual application looks like so I can visualize using it.",
+      "acceptanceCriteria": [
+        "Section title: 'A GTD experience you'll love'",
+        "Large placeholder screenshots/mockups of the app",
+        "Show multiple views: Today view, Inbox, Project detail (as tabs or carousel)",
+        "Browser-frame mockup wrapper for screenshots",
+        "Subtle shadow and depth effects",
+        "Responsive: full-width on mobile, centered with padding on desktop",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": "Use cards from Aceternity UI Pro"
+    },
+    {
+      "id": "US-006",
+      "title": "Social Proof / Trust Section",
+      "description": "As a user, I want to see that others trust and use Petal GTD.",
+      "acceptanceCriteria": [
+        "Display trust indicators (placeholder content)",
+        "'Trusted by X+ productive people' counter",
+        "Optional: logo cloud of companies/tools",
+        "Optional: featured testimonial quote",
+        "Minimalist design that doesn't distract from main content",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": "Use logo-clouds or testimonials from Aceternity UI Pro"
+    },
+    {
+      "id": "US-007",
+      "title": "Call-to-Action Section",
+      "description": "As a user, I want a clear final call-to-action before the footer to encourage signup.",
+      "acceptanceCriteria": [
+        "Compelling headline: 'Ready to get things done?'",
+        "Brief value proposition reminder",
+        "Large, prominent 'Get Started Free' button",
+        "Secondary text: 'No credit card required'",
+        "Visually distinct section (gradient background or card style)",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": "Use cta-sections from Aceternity UI Pro"
+    },
+    {
+      "id": "US-008",
+      "title": "Footer Component",
+      "description": "As a user, I want a footer with useful links and information.",
+      "acceptanceCriteria": [
+        "Petal GTD logo and brief tagline",
+        "Navigation links: Features, Pricing, About, Contact",
+        "Legal links: Privacy Policy, Terms of Service",
+        "Social media icons (placeholder links)",
+        "Copyright notice with current year",
+        "Clean, minimal design consistent with page style",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": "Use footers from Aceternity UI Pro"
+    },
+    {
+      "id": "US-009",
+      "title": "Responsive Design & Polish",
+      "description": "As a user, I want the landing page to work well on all devices.",
+      "acceptanceCriteria": [
+        "Test and fix layout issues on mobile (< 640px)",
+        "Test and fix layout issues on tablet (640px - 1024px)",
+        "Test and fix layout issues on desktop (> 1024px)",
+        "Ensure touch-friendly tap targets on mobile",
+        "Verify all animations are performant (no jank)",
+        "Add smooth scroll behavior for anchor links",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "Dark Mode Support",
+      "description": "As a user, I want the landing page to support dark mode to match my system preference.",
+      "acceptanceCriteria": [
+        "Implement dark mode using next-themes or Tailwind dark mode",
+        "All sections properly styled for both light and dark modes",
+        "Theme toggle in navbar (optional, can default to system)",
+        "Smooth transition between themes",
+        "Images/mockups adapted for both themes (or use neutral backgrounds)",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "SEO & Meta Tags",
+      "description": "As a developer, I need to configure SEO meta tags for better discoverability.",
+      "acceptanceCriteria": [
+        "Configure page title: 'Petal GTD - Beautiful Task Management'",
+        "Add meta description highlighting key benefits",
+        "Configure Open Graph tags for social sharing",
+        "Add favicon and app icons",
+        "Typecheck passes"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
