@@ -9,6 +9,8 @@
 - Constants in src/constants/
 - Use "use client" directive for interactive components (useState, useEffect, onClick, etc.)
 - Tailwind v4 opacity: use bg-color/80 syntax (not bg-opacity-80)
+- Dark mode: use `.dark` class selector in CSS, next-themes handles theme switching
+- For hydration-safe client detection: use useSyncExternalStore(() => () => {}, () => true, () => false)
 
 ---
 
@@ -237,4 +239,31 @@
   - scroll-padding-top accounts for fixed navbar height when scrolling to anchors
   - Gap-based layouts (using gap-8) are more flexible than mt-/mb- for responsive spacing
   - Test at 320px width (smallest common mobile) to catch tight layouts
+---
+
+## 2026-01-31 14:45 - US-010
+- What was implemented:
+  - Installed and configured next-themes for dark mode support
+  - Created ThemeProvider component wrapping next-themes provider
+  - Updated layout.tsx to wrap app in ThemeProvider with class-based theme switching
+  - Updated globals.css to use `.dark` class instead of `prefers-color-scheme` media query
+  - Added theme toggle button to navbar (desktop: icon button, mobile: text button with icon)
+  - Added Sun/Moon icons for theme toggle
+  - All sections automatically support dark mode via CSS variables (no component changes needed)
+  - Theme defaults to system preference, with smooth toggle between light/dark
+
+- Files changed:
+  - package.json - Added next-themes dependency
+  - src/components/ThemeProvider.tsx - New client component wrapping next-themes
+  - src/app/layout.tsx - Wrapped children in ThemeProvider, added suppressHydrationWarning
+  - src/app/globals.css - Changed from @media (prefers-color-scheme: dark) to .dark class
+  - src/components/Navbar.tsx - Added theme toggle button with Sun/Moon icons
+
+- **Learnings for future iterations:**
+  - next-themes handles SSR/hydration issues - use attribute="class" for Tailwind compatibility
+  - Use useSyncExternalStore for hydration-safe "mounted" detection (avoids lint warnings)
+  - CSS variable approach means all components automatically adapt to theme changes
+  - disableTransitionOnChange prevents FOUC when theme changes
+  - suppressHydrationWarning on <html> prevents React hydration warnings from theme script
+  - Show placeholder icon before mount to avoid layout shift
 ---
