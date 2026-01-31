@@ -183,3 +183,27 @@
   - Use flex with gap and separator dots for inline secondary text elements
   - CheckCircleIcon provides visual reinforcement for trust signals
 ---
+
+## 2026-01-31 13:45 - US-008
+- What was implemented:
+  - Footer component with clean, minimal design
+  - Petal GTD logo and tagline: "Beautiful task management inspired by Things 3"
+  - Navigation links: Features, Pricing, About, Contact in Product section
+  - Legal links: Privacy Policy, Terms of Service in Legal section
+  - Social media icons: Twitter (X), GitHub, LinkedIn with placeholder hrefs
+  - Copyright notice with dynamic current year using new Date().getFullYear()
+  - Responsive 4-column grid layout: 2 columns for logo/tagline, 1 for Product, 1 for Legal
+  - Border-top separator from main content
+  - Framer Motion whileInView animations for entrance effects
+
+- Files changed:
+  - src/components/Footer.tsx - New footer component
+  - src/app/page.tsx - Added Footer import and component, reduced pricing placeholder height
+
+- **Learnings for future iterations:**
+  - Footer goes outside <main> element for semantic HTML structure
+  - Social icons use fill="currentColor" for easy color theming via text-color classes
+  - lg:col-span-2 on first column allows logo section to be wider than other columns
+  - Use dynamic year with getFullYear() to avoid manual updates
+  - Consistent link hover pattern: text-muted-foreground hover:text-foreground
+---
