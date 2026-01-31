@@ -1,10 +1,23 @@
+import { Features } from "@/components/features";
+import { FeaturesSecondary } from "@/components/features-secondary";
+import { FeaturesTertiary } from "@/components/features-tertiary";
+import { Hero } from "@/components/hero";
+import { Outcomes } from "@/components/outcomes";
+import { Pricing } from "@/components/pricing";
+import { Speed } from "@/components/speed";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-background">
-      <h1 className="text-4xl font-bold text-foreground">Petal GTD</h1>
-      <p className="mt-4 text-lg text-muted-foreground">
-        Beautiful task management is coming soon.
-      </p>
-    </main>
+    <div className="min-h-screen">
+      <Hero />
+      <FeaturesTertiary />
+
+      <Speed />
+      <Features />
+
+      {/* <FeaturesSecondary /> */}
+      {/* <Outcomes /> */}
+      <Pricing />
+    </div>
   );
 }
