@@ -109,3 +109,30 @@
   - Icon components as separate functions allow for cleaner code and easy reuse
   - Group hover effects: use group class on parent and group-hover: on children
 ---
+
+## 2026-01-31 13:00 - US-005
+- What was implemented:
+  - App Showcase Section with interactive tab navigation
+  - Section title: "A GTD experience you'll love" with primary color accent
+  - Three view tabs: Today, Inbox, Project - each with distinct mock content
+  - Browser-frame mockup wrapper with traffic light dots and URL bar
+  - AnimatePresence for smooth transitions between views
+  - Today view: Daily tasks with timestamps and completion states
+  - Inbox view: Quick capture tasks with tags
+  - Project view: Project detail with progress bar and subtask indicators
+  - Shared Sidebar component with navigation items and project list
+  - Subtle shadow and depth effects (gradient blur, bottom shadow)
+  - Responsive: hidden sidebar on mobile (md breakpoint), full-width on mobile
+
+- Files changed:
+  - src/components/Showcase.tsx - New showcase section component
+  - src/app/page.tsx - Added Showcase import and component, removed showcase placeholder
+
+- **Learnings for future iterations:**
+  - AnimatePresence with mode="wait" ensures smooth exit/enter transitions
+  - Use separate view components (TodayView, InboxView, ProjectView) for cleaner code
+  - Shared components like Sidebar can take activeItem prop for state highlighting
+  - Progress bar animation with motion.div initial/animate works well for visual feedback
+  - Tab navigation pattern: inline-flex with rounded-xl container and p-1.5 padding
+  - For depth effects: combine blur-2xl gradients with shadow-2xl shadow-black/10
+---
