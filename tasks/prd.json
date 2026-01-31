@@ -19,7 +19,7 @@
         "Project runs successfully with npm run dev"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {

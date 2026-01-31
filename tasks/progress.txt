@@ -1,0 +1,37 @@
+## Codebase Patterns
+- Use `cn()` from `@/lib/utils` for className merging (clsx + tailwind-merge)
+- Custom theme colors are defined in globals.css using CSS variables
+- Primary color is emerald (#10b981), configurable via --primary variable
+- Font is Inter, loaded via next/font/google
+- Project uses Next.js 14+ with App Router and TypeScript strict mode
+- All components should go in src/components/
+- Utility functions in src/lib/
+- Constants in src/constants/
+
+---
+
+## 2026-01-31 12:17 - US-001
+- What was implemented:
+  - Next.js 14+ project with App Router initialized using create-next-app
+  - TypeScript strict mode enabled (tsconfig.json)
+  - Tailwind CSS with custom Petal theme (emerald primary color)
+  - Framer Motion installed for animations
+  - Project structure created: /app, /components, /lib, /constants, /public
+  - cn utility function configured (clsx + tailwind-merge)
+  - Inter font configuration added
+  - Build and typecheck verified passing
+  - Dev server verified running successfully
+
+- Files changed:
+  - All initial project files created
+  - src/app/globals.css - Custom theme with Petal colors
+  - src/app/layout.tsx - Inter font configuration
+  - src/app/page.tsx - Basic starter page
+  - src/lib/utils.ts - cn utility function
+
+- **Learnings for future iterations:**
+  - Next.js 16.1.6 is the current version (not 14), but uses the same App Router
+  - The create-next-app prompts for React Compiler (say no for now)
+  - CSS variables are used for theming (--primary, --background, etc.)
+  - Tailwind v4 uses @theme inline for custom properties
+---
