@@ -86,3 +86,26 @@
   - Shadow with primary color: shadow-lg shadow-primary/25 creates nice glow effect
   - Responsive: use lg:flex-row for side-by-side layout on desktop
 ---
+
+## 2026-01-31 12:50 - US-004
+- What was implemented:
+  - Features Section component with animated grid layout
+  - Section title: "Everything you need to stay productive" with primary color accent
+  - 6 feature cards: Inbox Capture, Today View, Projects & Areas, Upcoming Calendar, Tags & Filtering, Dark & Light Mode
+  - Each card has: custom SVG icon, title, and description
+  - Hover animations: border color change, background, shadow, icon scale transform
+  - Subtle gradient overlay on hover for depth effect
+  - Staggered entrance animations using Framer Motion whileInView
+  - Responsive grid: 1 column mobile, 2 columns tablet (sm), 3 columns desktop (lg)
+
+- Files changed:
+  - src/components/Features.tsx - New features section component
+  - src/app/page.tsx - Added Features import and component, removed features placeholder section
+
+- **Learnings for future iterations:**
+  - Use whileInView for scroll-triggered animations (more performant than scroll listeners)
+  - viewport={{ once: true, margin: "-50px" }} prevents re-triggering and starts animation before element is fully visible
+  - Staggered animations: use delay: index * 0.1 for sequential entrance effects
+  - Icon components as separate functions allow for cleaner code and easy reuse
+  - Group hover effects: use group class on parent and group-hover: on children
+---
