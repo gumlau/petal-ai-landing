@@ -7,6 +7,8 @@
 - All components should go in src/components/
 - Utility functions in src/lib/
 - Constants in src/constants/
+- Use "use client" directive for interactive components (useState, useEffect, onClick, etc.)
+- Tailwind v4 opacity: use bg-color/80 syntax (not bg-opacity-80)
 
 ---
 
@@ -34,4 +36,27 @@
   - The create-next-app prompts for React Compiler (say no for now)
   - CSS variables are used for theming (--primary, --background, etc.)
   - Tailwind v4 uses @theme inline for custom properties
+---
+
+## 2026-01-31 12:25 - US-002
+- What was implemented:
+  - Navbar component with sticky positioning and fixed header
+  - Petal GTD custom SVG logo (petal flower design)
+  - Navigation links: Features, Showcase, Pricing
+  - "Get Started" CTA button with primary styling
+  - Responsive hamburger menu for mobile (hidden on md+ screens)
+  - Backdrop blur effect that activates on scroll (bg-background/80 + backdrop-blur-md)
+  - Smooth scroll already configured in globals.css (scroll-behavior: smooth)
+  - Placeholder sections added to page.tsx for navigation targets
+
+- Files changed:
+  - src/components/Navbar.tsx - New navbar component
+  - src/app/page.tsx - Added Navbar import and placeholder sections
+
+- **Learnings for future iterations:**
+  - Use "use client" directive for components with useState/useEffect
+  - Tailwind v4: bg-background/80 syntax works for opacity (no need for bg-opacity)
+  - backdrop-blur-md provides nice glass effect with semi-transparent background
+  - Mobile menu uses max-h animation for smooth expand/collapse
+  - Section IDs (#features, #showcase, #pricing) are ready for future sections
 ---
