@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { Showcase } from "@/components/Showcase";
+import { SocialProof } from "@/components/SocialProof";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Showcase />
+        <SocialProof />
 
         {/* Placeholder sections for navigation targets */}
         <section id="pricing" className="min-h-screen w-full pt-16" />
