@@ -47,12 +47,12 @@ export function Footer() {
             </p>
 
             {/* Social Icons */}
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex items-center gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground active:bg-secondary/80"
                   aria-label={social.name}
                 >
                   <social.icon className="h-5 w-5" />

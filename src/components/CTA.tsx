@@ -8,9 +8,9 @@ export function CTA() {
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
 
-      {/* Animated orb decorations */}
+      {/* Animated orb decorations - GPU accelerated */}
       <motion.div
-        className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl"
+        className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl will-change-transform"
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.2, 0.3, 0.2],
@@ -22,7 +22,7 @@ export function CTA() {
         }}
       />
       <motion.div
-        className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl"
+        className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl will-change-transform"
         animate={{
           scale: [1.1, 1, 1.1],
           opacity: [0.3, 0.2, 0.3],
@@ -78,19 +78,23 @@ export function CTA() {
           </motion.div>
 
           {/* Secondary Text */}
-          <motion.p
-            className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground"
+          <motion.div
+            className="mt-4 flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <CheckCircleIcon className="h-4 w-4 text-primary" />
-            No credit card required
-            <span className="mx-2 text-border">•</span>
-            <CheckCircleIcon className="h-4 w-4 text-primary" />
-            Free forever plan available
-          </motion.p>
+            <span className="flex items-center gap-2">
+              <CheckCircleIcon className="h-4 w-4 text-primary" />
+              No credit card required
+            </span>
+            <span className="hidden text-border sm:inline">•</span>
+            <span className="flex items-center gap-2">
+              <CheckCircleIcon className="h-4 w-4 text-primary" />
+              Free forever plan available
+            </span>
+          </motion.div>
         </motion.div>
       </div>
     </section>

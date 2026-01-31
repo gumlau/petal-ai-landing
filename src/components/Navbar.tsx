@@ -68,7 +68,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-foreground md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-secondary hover:text-foreground active:bg-secondary/80 md:hidden"
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle menu"
           >
@@ -84,7 +84,7 @@ export function Navbar() {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isMobileMenuOpen ? "max-h-64 pb-4" : "max-h-0"
+            isMobileMenuOpen ? "max-h-80 pb-4" : "max-h-0"
           )}
         >
           <div className="space-y-1 pt-2">
@@ -93,7 +93,7 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
+                className="block rounded-md px-4 py-3 text-base font-medium text-muted-foreground hover:bg-secondary hover:text-foreground active:bg-secondary/80"
               >
                 {link.name}
               </a>
@@ -101,7 +101,7 @@ export function Navbar() {
             <a
               href="#signup"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 block rounded-lg bg-primary px-3 py-2 text-center text-base font-medium text-primary-foreground hover:bg-primary/90"
+              className="mt-2 block rounded-lg bg-primary px-4 py-3 text-center text-base font-medium text-primary-foreground hover:bg-primary/90 active:bg-primary/80"
             >
               Get Started
             </a>

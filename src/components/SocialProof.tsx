@@ -28,11 +28,11 @@ const testimonial = {
 
 export function SocialProof() {
   return (
-    <section className="relative w-full bg-secondary/30 py-20">
+    <section className="relative w-full bg-secondary/30 py-12 sm:py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Trust Counter */}
         <motion.div
-          className="mb-16 text-center"
+          className="mb-8 text-center sm:mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -49,7 +49,7 @@ export function SocialProof() {
 
         {/* Stats Grid */}
         <motion.div
-          className="mb-16 grid grid-cols-1 gap-8 sm:grid-cols-3"
+          className="mb-8 grid grid-cols-1 gap-6 sm:mb-12 sm:grid-cols-3 sm:gap-8 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -73,16 +73,16 @@ export function SocialProof() {
 
         {/* Logo Cloud */}
         <motion.div
-          className="mb-16"
+          className="mb-8 sm:mb-12 md:mb-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <p className="mb-8 text-center text-sm text-muted-foreground">
+          <p className="mb-6 text-center text-sm text-muted-foreground sm:mb-8">
             Teams from these companies use Petal GTD
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
             {logos.map((logo, index) => {
               const Icon = logo.icon;
               return (
@@ -105,8 +105,8 @@ export function SocialProof() {
         {/* Featured Testimonial */}
         <motion.div
           className={cn(
-            "mx-auto max-w-3xl rounded-2xl border border-border bg-background/50 p-8 backdrop-blur-sm",
-            "sm:p-10"
+            "mx-auto max-w-3xl rounded-2xl border border-border bg-background/50 p-6 backdrop-blur-sm",
+            "sm:p-8 md:p-10"
           )}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

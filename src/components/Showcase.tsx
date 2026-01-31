@@ -32,11 +32,11 @@ export function Showcase() {
     views.find((v) => v.id === activeView)?.content ?? TodayView;
 
   return (
-    <section id="showcase" className="relative w-full bg-background py-24">
+    <section id="showcase" className="relative w-full bg-background py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="mb-16 text-center"
+          className="mb-8 text-center sm:mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -60,7 +60,7 @@ export function Showcase() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className="inline-flex items-center gap-1 rounded-xl border border-border bg-secondary/30 p-1.5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-1 rounded-xl border border-border bg-secondary/30 p-1 sm:p-1.5 backdrop-blur-sm">
             {views.map((view) => {
               const Icon = view.icon;
               return (
@@ -68,13 +68,13 @@ export function Showcase() {
                   key={view.id}
                   onClick={() => setActiveView(view.id)}
                   className={cn(
-                    "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200",
+                    "flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 sm:px-4",
                     activeView === view.id
                       ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                      : "text-muted-foreground hover:bg-secondary hover:text-foreground active:bg-secondary/80"
                   )}
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-5 w-5 sm:h-4 sm:w-4" />
                   <span className="hidden sm:inline">{view.label}</span>
                 </button>
               );
@@ -143,12 +143,12 @@ function TodayView() {
   ];
 
   return (
-    <div className="flex min-h-[400px] gap-0 sm:min-h-[500px]">
+    <div className="flex min-h-[320px] gap-0 sm:min-h-[400px] md:min-h-[500px]">
       {/* Sidebar */}
       <Sidebar activeItem="today" />
 
       {/* Main content */}
-      <div className="flex-1 p-4 sm:p-6">
+      <div className="flex-1 p-3 sm:p-4 md:p-6">
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -182,12 +182,12 @@ function InboxView() {
   ];
 
   return (
-    <div className="flex min-h-[400px] gap-0 sm:min-h-[500px]">
+    <div className="flex min-h-[320px] gap-0 sm:min-h-[400px] md:min-h-[500px]">
       {/* Sidebar */}
       <Sidebar activeItem="inbox" />
 
       {/* Main content */}
-      <div className="flex-1 p-4 sm:p-6">
+      <div className="flex-1 p-3 sm:p-4 md:p-6">
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
@@ -243,12 +243,12 @@ function ProjectView() {
   );
 
   return (
-    <div className="flex min-h-[400px] gap-0 sm:min-h-[500px]">
+    <div className="flex min-h-[320px] gap-0 sm:min-h-[400px] md:min-h-[500px]">
       {/* Sidebar */}
       <Sidebar activeItem="project" />
 
       {/* Main content */}
-      <div className="flex-1 p-4 sm:p-6">
+      <div className="flex-1 p-3 sm:p-4 md:p-6">
         <div className="mb-6">
           <div className="flex items-center gap-2">
             <span className="text-xl">🚀</span>

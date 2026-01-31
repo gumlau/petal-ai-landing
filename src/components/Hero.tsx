@@ -10,8 +10,8 @@ export function Hero() {
       <GridBackground />
 
       {/* Hero Content */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col items-center justify-center px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="flex w-full flex-col items-center gap-8 text-center lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:text-left">
           {/* Text Content */}
           <motion.div
             className="max-w-2xl lg:max-w-xl"
@@ -69,7 +69,7 @@ export function Hero() {
 
           {/* Hero Image/Mockup */}
           <motion.div
-            className="mt-12 w-full max-w-lg lg:mt-0 lg:max-w-xl"
+            className="w-full max-w-lg lg:max-w-xl"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -101,9 +101,9 @@ function GridBackground() {
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
 
-      {/* Animated floating orbs */}
+      {/* Animated floating orbs - GPU accelerated with will-change */}
       <motion.div
-        className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
+        className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl will-change-transform"
         animate={{
           x: [0, 30, 0],
           y: [0, 20, 0],
@@ -115,7 +115,7 @@ function GridBackground() {
         }}
       />
       <motion.div
-        className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
+        className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl will-change-transform"
         animate={{
           x: [0, -20, 0],
           y: [0, -30, 0],
