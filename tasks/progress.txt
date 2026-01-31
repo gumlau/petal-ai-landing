@@ -267,3 +267,27 @@
   - suppressHydrationWarning on <html> prevents React hydration warnings from theme script
   - Show placeholder icon before mount to avoid layout shift
 ---
+
+## 2026-01-31 15:00 - US-011
+- What was implemented:
+  - Enhanced metadata export in layout.tsx with comprehensive SEO configuration
+  - Page title: "Petal GTD - Beautiful Task Management"
+  - Meta description highlighting key benefits (GTD workflow, Things 3 inspiration)
+  - Keywords array for search engine indexing
+  - Author and creator metadata
+  - metadataBase URL for canonical references
+  - Open Graph tags: type, locale, url, siteName, title, description
+  - Twitter card configuration with summary card type
+  - SVG favicon (icon.svg) with Petal flower logo in emerald green
+
+- Files changed:
+  - src/app/layout.tsx - Enhanced Metadata export with SEO/OG/Twitter configuration
+  - public/icon.svg - New SVG favicon with Petal flower design
+
+- **Learnings for future iterations:**
+  - Next.js Metadata API supports keywords, authors, creator, metadataBase, openGraph, twitter, icons
+  - SVG favicons work in all modern browsers and are the simplest solution
+  - metadataBase is required for relative URLs in Open Graph images
+  - For production, consider generating actual PNG images for OG (1200x630) using Next.js ImageResponse API
+  - Apple touch icons can also use SVG with type="image/svg+xml"
+---
