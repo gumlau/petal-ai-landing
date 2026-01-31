@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
+import { Showcase } from "@/components/Showcase";
 
 export default function Home() {
   return (
@@ -9,9 +10,9 @@ export default function Home() {
       <main className="flex flex-col bg-background">
         <Hero />
         <Features />
+        <Showcase />
 
         {/* Placeholder sections for navigation targets */}
-        <section id="showcase" className="min-h-screen w-full pt-16" />
         <section id="pricing" className="min-h-screen w-full pt-16" />
       </main>
     </>
