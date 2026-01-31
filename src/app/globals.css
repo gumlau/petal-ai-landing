@@ -15,6 +15,21 @@
   --ring: #10b981;
 }
 
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2937;
+  --secondary-foreground: #f9fafb;
+  --muted: #111827;
+  --muted-foreground: #9ca3af;
+  --accent: #064e3b;
+  --accent-foreground: #ecfdf5;
+  --border: #374151;
+  --ring: #10b981;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -29,23 +44,6 @@
   --color-border: var(--border);
   --color-ring: var(--ring);
   --font-sans: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary: #10b981;
-    --primary-foreground: #ffffff;
-    --secondary: #1f2937;
-    --secondary-foreground: #f9fafb;
-    --muted: #111827;
-    --muted-foreground: #9ca3af;
-    --accent: #064e3b;
-    --accent-foreground: #ecfdf5;
-    --border: #374151;
-    --ring: #10b981;
-  }
 }
 
 body {

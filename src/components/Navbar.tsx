@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -9,9 +10,20 @@ const navLinks = [
   { name: "Pricing", href: "#pricing" },
 ];
 
+// Hydration-safe hook to detect if we're on the client
+function useHasMounted() {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+}
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mounted = useHasMounted();
+  const { setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +33,10 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
 
   return (
     <header
@@ -54,8 +70,25 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button (Desktop) */}
-          <div className="hidden md:block">
+          {/* CTA Button and Theme Toggle (Desktop) */}
+          <div className="hidden md:flex md:items-center md:gap-2">
+            {/* Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              aria-label="Toggle theme"
+            >
+              {mounted ? (
+                resolvedTheme === "dark" ? (
+                  <SunIcon className="h-5 w-5" />
+                ) : (
+                  <MoonIcon className="h-5 w-5" />
+                )
+              ) : (
+                <div className="h-5 w-5" />
+              )}
+            </button>
             <a
               href="#signup"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -84,7 +117,7 @@ export function Navbar() {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isMobileMenuOpen ? "max-h-80 pb-4" : "max-h-0"
+            isMobileMenuOpen ? "max-h-96 pb-4" : "max-h-0"
           )}
         >
           <div className="space-y-1 pt-2">
@@ -98,6 +131,31 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
+            {/* Mobile Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex w-full items-center gap-3 rounded-md px-4 py-3 text-base font-medium text-muted-foreground hover:bg-secondary hover:text-foreground active:bg-secondary/80"
+            >
+              {mounted ? (
+                resolvedTheme === "dark" ? (
+                  <>
+                    <SunIcon className="h-5 w-5" />
+                    Light Mode
+                  </>
+                ) : (
+                  <>
+                    <MoonIcon className="h-5 w-5" />
+                    Dark Mode
+                  </>
+                )
+              ) : (
+                <>
+                  <div className="h-5 w-5" />
+                  Theme
+                </>
+              )}
+            </button>
             <a
               href="#signup"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -168,6 +226,44 @@ function XIcon({ className }: { className?: string }) {
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  );
+}
+
+function SunIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+      />
+    </svg>
+  );
+}
+
+function MoonIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
       />
     </svg>
   );
