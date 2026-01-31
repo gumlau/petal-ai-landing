@@ -60,3 +60,29 @@
   - Mobile menu uses max-h animation for smooth expand/collapse
   - Section IDs (#features, #showcase, #pricing) are ready for future sections
 ---
+
+## 2026-01-31 12:35 - US-003
+- What was implemented:
+  - Hero section component with animated background
+  - Large bold headline: "Get Things Done, Beautifully" with primary color highlight
+  - Subheadline explaining GTD workflow and Things 3 inspiration
+  - "Inspired by Things 3" badge with animated entrance
+  - Primary CTA: "Start for Free" with arrow icon and shadow effects
+  - Secondary CTA: "Watch Demo" with play icon and border styling
+  - Interactive app mockup showing browser frame with sidebar and task list
+  - Animated grid background with floating gradient orbs using Framer Motion
+  - Responsive layout: stacked on mobile, side-by-side on desktop (lg breakpoint)
+  - Smooth entrance animations using Framer Motion
+
+- Files changed:
+  - src/components/Hero.tsx - New hero section component
+  - src/app/page.tsx - Added Hero import and component
+
+- **Learnings for future iterations:**
+  - Framer Motion works great with "use client" directive
+  - Grid background created with CSS linear-gradient and backgroundSize
+  - Floating orbs use blur-3xl and animate with x/y transforms for subtle movement
+  - App mockup uses browser chrome (traffic light dots + URL bar) for realistic feel
+  - Shadow with primary color: shadow-lg shadow-primary/25 creates nice glow effect
+  - Responsive: use lg:flex-row for side-by-side layout on desktop
+---
