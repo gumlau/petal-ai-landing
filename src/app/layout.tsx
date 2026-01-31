@@ -10,7 +10,39 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Petal GTD - Beautiful Task Management",
-  description: "A modern GTD productivity application inspired by Things 3",
+  description:
+    "Organize your life with Petal GTD - a beautiful, modern task management app inspired by Things 3. Capture ideas, plan projects, and get things done with a clean GTD workflow.",
+  keywords: [
+    "GTD",
+    "task management",
+    "productivity",
+    "to-do list",
+    "Things 3",
+    "project management",
+    "getting things done",
+  ],
+  authors: [{ name: "Petal GTD" }],
+  creator: "Petal GTD",
+  metadataBase: new URL("https://petalgtd.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://petalgtd.com",
+    siteName: "Petal GTD",
+    title: "Petal GTD - Beautiful Task Management",
+    description:
+      "Organize your life with Petal GTD - a beautiful, modern task management app inspired by Things 3. Capture ideas, plan projects, and get things done.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Petal GTD - Beautiful Task Management",
+    description:
+      "Organize your life with Petal GTD - a beautiful, modern task management app inspired by Things 3.",
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
