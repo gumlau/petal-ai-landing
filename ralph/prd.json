@@ -1,0 +1,422 @@
+{
+  "project": "Petal GTD 产品管理文档系统",
+  "branchName": "ralph/product-docs",
+  "description": "为 Petal GTD 创建 21 个产品管理知识文档，运用产品管理技能方法论分析产品现状和发展方向",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "创建文档目录结构",
+      "description": "作为开发者，我需要一个清晰的文档目录结构，以便按主题分类组织 21 个产品文档。",
+      "acceptanceCriteria": [
+        "创建 docs/ 根目录",
+        "创建 docs/product-strategy/ 目录（产品战略类）",
+        "创建 docs/user-research/ 目录（用户研究类）",
+        "创建 docs/execution/ 目录（执行落地类）",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "编写北极星指标文档",
+      "description": "作为产品负责人，我需要运用北极星指标方法论分析 Petal GTD 应该追踪什么核心指标。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/north-star-metrics.md",
+        "分析 Petal GTD 的核心价值交付点",
+        "提出 2-3 个候选北极星指标并分析优劣",
+        "给出推荐的北极星指标及其定义",
+        "识别防止指标被 gaming 的护栏指标",
+        "引用 .claude/skills/writing-north-star-metrics/SKILL.md 中的核心原则",
+        "遵循文档结构模板（概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料）",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "编写产品愿景文档",
+      "description": "作为产品负责人，我需要定义 Petal GTD 的长期产品愿景，区别于 'Things3 克隆'。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/product-vision.md",
+        "描述 5-10 年后用户世界的理想状态（不提产品功能）",
+        "分析当前 'GTD 任务管理' 愿景的局限性",
+        "探索可能的差异化愿景方向",
+        "确保愿景足够具体，能指导团队决策",
+        "引用 .claude/skills/defining-product-vision/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "编写路线图优先级文档",
+      "description": "作为产品负责人，我需要一个框架来决定下一步应该做什么功能。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/roadmap-prioritization.md",
+        "分析当前 Petal GTD 的功能成熟度",
+        "列出可能的下一步方向（深化 GTD、AI 集成、协作、移动端等）",
+        "提供优先级排序框架",
+        "基于增长模型分析应该先做什么",
+        "引用 .claude/skills/prioritizing-roadmap/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "编写 OKR 与目标设定文档",
+      "description": "作为产品负责人，我需要为 Petal GTD 设定清晰的季度/年度目标。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/okrs-and-goals.md",
+        "分析独立开发者场景下 OKR 的适用性",
+        "为 Petal GTD 设定示例 OKR（Q1/Q2）",
+        "区分输入指标和输出指标",
+        "避免 'toddler soccer' 问题",
+        "引用 .claude/skills/setting-okrs-goals/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "编写竞争分析文档",
+      "description": "作为产品负责人，我需要系统分析 Petal GTD 的竞争环境。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/competitive-analysis.md",
+        "识别直接竞品（Things3, Todoist, TickTick, Notion 等）",
+        "识别间接竞品（纸笔、Excel、不行动）",
+        "分析每个竞品的核心优势和弱点",
+        "找出 Petal GTD 可以利用的不对称优势",
+        "引用 .claude/skills/competitive-analysis/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "编写逆向工作法文档",
+      "description": "作为产品负责人，我需要从理想终态反推产品策略。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/working-backwards.md",
+        "为 Petal GTD 写一份假想的发布新闻稿",
+        "从用户视角描述理想的产品体验",
+        "反推需要构建的核心能力",
+        "引用 .claude/skills/working-backwards/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "编写产品品味文档",
+      "description": "作为产品负责人，我需要培养产品品味和直觉。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/product-taste.md",
+        "分析 Things3 为什么被认为有 '好品味'",
+        "讨论 AI 时代品味的重要性",
+        "提供培养产品品味的方法",
+        "引用 .claude/skills/product-taste-intuition/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 8,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "编写行为产品设计文档",
+      "description": "作为产品负责人，我需要应用行为科学设计产品。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/behavioral-design.md",
+        "分析 GTD 方法论中的行为心理学原理",
+        "讨论如何通过设计促进习惯养成",
+        "应用损失厌恶、承诺一致性等原理",
+        "引用 .claude/skills/behavioral-product-design/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 9,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "编写创业想法验证文档",
+      "description": "作为创业者，我需要验证 Petal GTD 的商业可行性。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/startup-ideation.md",
+        "分析 GTD 工具市场是否是 'tar pit'（焦油坑）",
+        "评估市场规模和增长潜力",
+        "讨论差异化定位的可能性",
+        "引用 .claude/skills/startup-ideation/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "编写产品转型/Pivot 文档",
+      "description": "作为创业者，我需要一个框架来决定是否以及如何 pivot。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/startup-pivoting.md",
+        "分析当前 'Things3 克隆' 策略的可持续性",
+        "提供 pivot 决策框架",
+        "列出可能的 pivot 方向（AI-first、垂直领域、协作等）",
+        "引用 .claude/skills/startup-pivoting/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 11,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-012",
+      "title": "编写 PMF 测量文档",
+      "description": "作为创业者，我需要知道 Petal GTD 是否达到了 PMF。",
+      "acceptanceCriteria": [
+        "创建 docs/product-strategy/measuring-pmf.md",
+        "设计 Sean Ellis 调研问卷",
+        "分析当前留存数据（如有）",
+        "定义 PMF 的具体里程碑",
+        "讨论何时应该开始规模化增长",
+        "引用 .claude/skills/measuring-product-market-fit/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 12,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-013",
+      "title": "编写问题定义文档",
+      "description": "作为产品负责人，我需要明确 Petal GTD 解决的核心问题。",
+      "acceptanceCriteria": [
+        "创建 docs/user-research/problem-definition.md",
+        "通过 dogfooding 分析自己使用产品时的痛点",
+        "定义目标用户画像",
+        "明确核心问题陈述（Problem Statement）",
+        "区分 'nice to have' 和 'must have' 问题",
+        "引用 .claude/skills/problem-definition/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 13,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-014",
+      "title": "编写用户访谈文档",
+      "description": "作为产品负责人，我需要一个用户访谈的方法论和问题模板。",
+      "acceptanceCriteria": [
+        "创建 docs/user-research/user-interviews.md",
+        "提供用户访谈问题模板",
+        "讨论独立开发者如何找到访谈对象",
+        "总结观察法 vs 访谈法的差异",
+        "规划 Petal GTD 的用户研究计划",
+        "引用 .claude/skills/conducting-user-interviews/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 14,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-015",
+      "title": "编写调研设计文档",
+      "description": "作为产品负责人，我需要知道如何设计有效的用户调研问卷。",
+      "acceptanceCriteria": [
+        "创建 docs/user-research/survey-design.md",
+        "提供 PMF 调研问卷模板",
+        "提供 NPS 调研最佳实践",
+        "讨论定量调研的样本量要求",
+        "引用 .claude/skills/designing-surveys/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 15,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-016",
+      "title": "编写用户反馈分析文档",
+      "description": "作为产品负责人，我需要系统化收集和分析用户反馈。",
+      "acceptanceCriteria": [
+        "创建 docs/user-research/feedback-analysis.md",
+        "规划 Petal GTD 的反馈收集渠道",
+        "提供反馈分类和优先级框架",
+        "讨论如何从 Reddit、Twitter 等平台收集真实反馈",
+        "引用 .claude/skills/analyzing-user-feedback/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 16,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-017",
+      "title": "编写可用性测试文档",
+      "description": "作为产品负责人，我需要验证产品的可用性。",
+      "acceptanceCriteria": [
+        "创建 docs/user-research/usability-testing.md",
+        "提供独立开发者可执行的简化可用性测试方法",
+        "讨论 AI 工具在原型测试中的应用",
+        "设计 Petal GTD 的关键任务流程测试",
+        "引用 .claude/skills/usability-testing/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 17,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-018",
+      "title": "编写 PRD 写作指南文档",
+      "description": "作为开发者，我需要一个 PRD 写作模板和最佳实践指南。",
+      "acceptanceCriteria": [
+        "创建 docs/execution/writing-prds.md",
+        "总结当前项目 PRD 的写作模式",
+        "提供适合独立开发者的简化 PRD 模板",
+        "讨论 AI 时代 PRD 的变化（原型优先 vs 文档优先）",
+        "引用 .claude/skills/writing-prds/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 18,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-019",
+      "title": "编写规格与设计文档",
+      "description": "作为开发者，我需要一个技术规格和设计文档的写作指南。",
+      "acceptanceCriteria": [
+        "创建 docs/execution/specs-and-designs.md",
+        "总结低保真设计 vs 高保真设计的权衡",
+        "提供适合独立开发的设计流程",
+        "讨论何时需要详细规格，何时直接编码",
+        "引用 .claude/skills/writing-specs-designs/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 19,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-020",
+      "title": "编写范围控制文档",
+      "description": "作为独立开发者，我需要学会控制功能范围，避免过度工程。",
+      "acceptanceCriteria": [
+        "创建 docs/execution/scoping-and-cutting.md",
+        "分析 Petal GTD 当前功能的必要性",
+        "提出 MLP（Minimum Lovable Product）vs MVP 的思考",
+        "识别可以删除或简化的功能",
+        "提供功能裁剪的决策框架",
+        "引用 .claude/skills/scoping-cutting/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 20,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-021",
+      "title": "编写产品发布文档",
+      "description": "作为产品负责人，我需要规划 Petal GTD 的发布策略。",
+      "acceptanceCriteria": [
+        "创建 docs/execution/shipping-products.md",
+        "分析当前产品的发布就绪度",
+        "规划 beta 发布策略",
+        "讨论 Product Hunt 发布策略",
+        "制定发布检查清单",
+        "引用 .claude/skills/shipping-products/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 21,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-022",
+      "title": "编写时间管理文档",
+      "description": "作为独立开发者，我需要有效管理开发时间。",
+      "acceptanceCriteria": [
+        "创建 docs/execution/timeline-management.md",
+        "分析独立开发者的时间分配挑战",
+        "提供任务估算技巧",
+        "讨论如何避免 '生产性拖延'",
+        "引用 .claude/skills/managing-timelines/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 22,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-023",
+      "title": "编写产品运营文档",
+      "description": "作为产品负责人，我需要理解产品运营的职能。",
+      "acceptanceCriteria": [
+        "创建 docs/execution/product-operations.md",
+        "分析独立开发者场景下产品运营的适用性",
+        "讨论如何建立用户反馈闭环",
+        "规划数据驱动决策的基础设施",
+        "引用 .claude/skills/product-operations/SKILL.md 中的核心原则",
+        "遵循文档结构模板",
+        "Typecheck passes"
+      ],
+      "priority": 23,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-024",
+      "title": "创建索引文件",
+      "description": "作为开发者，我需要一个索引文件来快速导航所有文档。",
+      "acceptanceCriteria": [
+        "创建 docs/README.md",
+        "按分类列出所有 21 个文档",
+        "提供每个文档的一句话描述",
+        "添加建议的阅读顺序",
+        "说明文档与 .claude/skills 的对应关系",
+        "Typecheck passes"
+      ],
+      "priority": 24,
+      "passes": true,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,853 @@
+## Codebase Patterns
+- Use `.gitkeep` files to track empty directories in git
+- Build uses Next.js with Turbopack - run `npm run build` to verify changes
+- Lint has pre-existing errors in components - these are not blocking for documentation tasks
+- Commit format: `feat: [Story ID] - Title` with Chinese description when appropriate
+
+---
+
+## 2026-02-01 - US-001
+- What was implemented:
+  - Created docs/ root directory with .gitkeep
+  - Created docs/product-strategy/ directory with .gitkeep
+  - Created docs/user-research/ directory with .gitkeep
+  - Created docs/execution/ directory with .gitkeep
+- Files changed:
+  - docs/.gitkeep (new)
+  - docs/product-strategy/.gitkeep (new)
+  - docs/user-research/.gitkeep (new)
+  - docs/execution/.gitkeep (new)
+- **Learnings for future iterations:**
+  - Project uses Next.js 16.1.6 with Turbopack
+  - No typecheck script defined, but `npm run build` includes TypeScript checking
+  - Pre-existing lint errors exist in src/components/ but don't affect build
+  - PRD is in Chinese - maintain Chinese language for documentation
+---
+
+## 2026-02-01 - US-002
+- What was implemented:
+  - Created docs/product-strategy/north-star-metrics.md - comprehensive North Star metrics analysis
+  - Analyzed Petal GTD's core value delivery points (quick capture, today focus, task completion, organized life, achievement review)
+  - Proposed 3 candidate North Star metrics with pros/cons analysis:
+    1. Weekly Tasks Completed (任务完成数)
+    2. Days with Active Today (有活跃Today的天数)
+    3. Weekly Review Completion Rate (周回顾完成率)
+  - Recommended "Weekly Tasks Completed" as the North Star with precise definition
+  - Identified 3 guardrail metrics (task lifespan, weekly active days, Today usage rate)
+  - Referenced core principles from .claude/skills/writing-north-star-metrics/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/north-star-metrics.md (new - 206 lines)
+- **Learnings for future iterations:**
+  - Petal GTD is positioned as a Things 3-inspired GTD productivity app
+  - Core features: Inbox, Today, Upcoming, Projects & Areas, Tags, Logbook, Quick Add
+  - Product value proposition: "Get Things Done, Beautifully" - GTD methodology + elegant design
+  - Freemium model: Free (basic) vs Pro ($9/mo with advanced features)
+  - Document structure should maintain Chinese language as the project is Chinese-first
+  - Skill files in .claude/skills/ contain valuable framework principles - always reference them
+---
+
+## 2026-02-01 - US-003
+- What was implemented:
+  - Created docs/product-strategy/product-vision.md - comprehensive product vision analysis
+  - Analyzed the limitations of current "Things 3 clone" positioning
+  - Explored 4 potential vision directions:
+    1. 心流状态的守护者 (Guardian of Flow State)
+    2. 个人成长的引擎 (Engine of Personal Growth)
+    3. 专注力的堡垒 (Fortress of Focus)
+    4. AI时代的人类决策助手 (Human Decision Assistant in AI Era)
+  - Recommended combining directions 1 & 3: "心智像水" (Mind Like Water) vision
+  - Defined emotional metaphor "清晨湖面" (Morning Lake) to guide design decisions
+  - Referenced core principles from .claude/skills/defining-product-vision/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/product-vision.md (new - 262 lines)
+- **Learnings for future iterations:**
+  - Current landing page tagline is "Get Things Done, Beautifully" - positioned as Things 3-inspired
+  - The hero.tsx and features components provide key product positioning context
+  - Product vision should describe user's world, not product features (Ben Williams principle)
+  - Vision should pass the "5-10 year test" - what does user's life look like if we succeed?
+  - Emotional metaphors (like "Morning Lake") help guide decentralized design decisions
+  - Vision documents can reference and build on other docs (e.g., north-star-metrics.md)
+---
+
+## 2026-02-01 - US-004
+- What was implemented:
+  - Created docs/product-strategy/roadmap-prioritization.md - comprehensive roadmap prioritization framework
+  - Analyzed current Petal GTD feature maturity (Inbox, Today, Upcoming, Projects, Tags, Logbook, Quick Add)
+  - Explored 6 potential directions with detailed evaluation:
+    1. 深化 GTD 核心体验 (Deepen GTD core) - "子弹" strategy
+    2. AI 智能助手 (AI Assistant) - High potential, time-sensitive opportunity
+    3. 协作功能 (Collaboration) - Not recommended, red ocean market
+    4. 移动端原生应用 (Mobile native) - Long-term necessary, short-term low ROI
+    5. 垂直领域深耕 (Vertical focus) - Classic indie dev strategy
+    6. 专注力与心流体验 (Focus & flow) - Highest alignment with vision
+  - Provided prioritization framework: 愿景对齐度 × 差异化程度 × 验证效率
+  - Recommended priority: Focus experience > AI assistant > GTD optimization
+  - Referenced core principles from .claude/skills/prioritizing-roadmap/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/roadmap-prioritization.md (new - 405 lines)
+- **Learnings for future iterations:**
+  - Roadmap prioritization should build on existing docs (product-vision.md, north-star-metrics.md)
+  - Use "通用货币" (common currency) framework to compare different directions objectively
+  - "季节" (seasons) thinking helps in fast-changing markets like AI era
+  - Balance "炮弹" (cannonballs) with "子弹" (bullets) - 80/20 split recommended
+  - Independent developers should focus on "小而美" (small but beautiful) niche markets
+  - Don't compete on Things 3's turf - create new categories instead
+---
+
+## 2026-02-01 - US-005
+- What was implemented:
+  - Created docs/product-strategy/okrs-and-goals.md - comprehensive OKR & goals analysis
+  - Analyzed OKR applicability in indie developer context (pros: focus, timeboxing, measurability; cons: over-formalization risk)
+  - Set Q1 2026 example OKR: "验证用户对专注体验的需求" with 3 Key Results
+  - Set Q2 2026 example OKR with conditional paths based on Q1 learnings
+  - Differentiated input metrics (controllable) vs output metrics (results)
+  - Addressed "toddler soccer" problem: only 1-2 Objectives per quarter, complete validation before switching
+  - Emphasized "build systems, not just goals" (Lane Shackleton principle)
+  - Provided simplified OKR process for indie developers (2hr quarterly planning, 15min weekly check)
+  - Referenced core principles from .claude/skills/setting-okrs-goals/SKILL.md
+  - Connected OKR to north-star-metrics, product-vision, and roadmap-prioritization docs
+- Files changed:
+  - docs/product-strategy/okrs-and-goals.md (new - 385 lines)
+- **Learnings for future iterations:**
+  - OKR docs should connect to other strategy docs (north-star, vision, roadmap)
+  - "Toddler soccer" (幼儿足球) is a useful metaphor for unfocused execution
+  - Input metrics (weekly user interviews, weekly releases) are more controllable than output metrics
+  - Indie developers need simplified processes: 10% planning rule (1 week for 1 quarter)
+  - System-building (recurring activities) often more valuable than one-time goals
+  - Q2 OKR should have conditional paths based on Q1 learnings (pivot-ready planning)
+---
+
+## 2026-02-01 - US-006
+- What was implemented:
+  - Created docs/product-strategy/competitive-analysis.md - comprehensive competitive analysis
+  - Identified 3 layers of competition: direct competitors, indirect competitors, hidden competition
+  - Analyzed 4 direct competitors in depth:
+    1. Things 3 - design benchmark, Apple-only weakness, no AI
+    2. Todoist - cross-platform king, design mediocre
+    3. TickTick - feature-rich but complex
+    4. OmniFocus - professional GTD but steep learning curve
+  - Analyzed 3 indirect competitors: Notion, Apple Reminders, Google Tasks
+  - Analyzed hidden competition: pen/paper, Excel/DIY systems, "do nothing"
+  - Identified 5 key insights:
+    1. Things 3's weakness is its strength (Apple-only)
+    2. All competitors lack AI-native experience (opportunity window)
+    3. Market needs "simple but not simplistic" option
+    4. Users choose philosophies, not just tools
+    5. Indie developers have asymmetric advantages
+  - Provided competitive positioning recommendations and response framework
+  - Referenced core principles from .claude/skills/competitive-analysis/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/competitive-analysis.md (new - 508 lines)
+- **Learnings for future iterations:**
+  - April Dunford's insight: 40% of deals lost to "no decision" - compete with status quo, not just competitors
+  - Hidden competition (pen/paper, do nothing) often more important than direct competitors
+  - Competitor features reflect past thinking (iceberg metaphor) - don't blindly copy
+  - Independent developers' asymmetric advantages: philosophy consistency, fast iteration, niche focus, long-termism
+  - Position recommendation: "Not a better Things 3, but a new category - mind-like-water tool"
+---
+
+## 2026-02-01 - US-007
+- What was implemented:
+  - Created docs/product-strategy/working-backwards.md - comprehensive working backwards analysis
+  - Wrote a hypothetical press release for Petal GTD 3.0 (2028):
+    - Problem: task management tools increase anxiety instead of reducing it
+    - Solution: from "do more" to "focus on important things peacefully"
+    - Key features: Morning Ritual, Flow Guard, Intent Copilot, Calm Score
+  - Described ideal user experience from user perspective:
+    - Morning: peaceful "Today Focus" selection (3 things)
+    - Work: Flow protection mode, distraction-free
+    - Evening: celebration of completion, not judgment of unfinished
+  - Reverse-engineered 5 core capabilities:
+    1. Smart priority guidance (daily focus selector)
+    2. Flow protection mechanism
+    3. Positive feedback system
+    4. AI intent assistant (long-term)
+    5. Minimal information architecture
+  - Created internal FAQ addressing common concerns
+  - Provided short/medium/long-term action recommendations
+  - Referenced core principles from .claude/skills/working-backwards/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/working-backwards.md (new - 418 lines)
+- **Learnings for future iterations:**
+  - PR/FAQ format forces clarity: problem paragraph → solution paragraph → customer quote → leadership quote
+  - Working backwards reveals the REAL problem: "tools increase anxiety" vs "need better task management"
+  - Ian McAllister's 3 tests for any feature: Is it big? Should we do it? Is there a viable plan?
+  - "Calm" can be a feature, not just a feeling: specific UI/UX decisions create calm
+  - Hypothetical press releases should be concrete enough to be publishable
+  - The key differentiator is "active guidance" vs "passive recording"
+  - Connect working backwards insights to other docs: vision provides the North Star, working backwards provides the path
+---
+
+## 2026-02-01 - US-008
+- What was implemented:
+  - Created docs/product-strategy/product-taste.md - comprehensive product taste analysis
+  - Analyzed why Things 3 is considered to have "good taste":
+    - Visual design: whitespace, color restraint, typography hierarchy, icon language, animations
+    - Interaction design: gestures, feedback, error prevention, shortcuts, progressive disclosure
+    - Feature design: restraint, clear concepts, Today view, Quick Entry, Logbook
+  - Identified deep reasons behind Things 3's taste: small team, long update cycles, buy-once model, founders as users
+  - Discussed AI era importance of taste:
+    - AI can execute but cannot judge quality
+    - Taste = accumulated judgment from exposure + analysis + practice
+    - Good taste often means subtraction, not addition
+  - Provided 5 methods to cultivate product taste:
+    1. Taste diary (daily product experience recording)
+    2. Reverse engineering great products
+    3. One-week taste challenges
+    4. Taste review mechanism before any feature
+    5. Following taste role models
+  - Connected to product vision's "Morning Lake" metaphor for taste decisions
+  - Referenced core principles from .claude/skills/product-taste-intuition/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/product-taste.md (new - 411 lines)
+- **Learnings for future iterations:**
+  - Taste = exposure hours + deliberate analysis + practice verification
+  - Things 3's taste comes from restraint: what they chose NOT to do
+  - In AI era, taste is the differentiator (Alex Komoroske quote)
+  - "Perfection is achieved when there is nothing left to take away" (Saint-Exupéry)
+  - Build "taste review checklist" to evaluate any feature decision
+  - Micro-taste (button colors, animation timing) is as important as macro-taste (product positioning)
+  - Having taste requires courage - saying "no" to users and market pressure
+---
+
+## 2026-02-01 - US-009
+- What was implemented:
+  - Created docs/product-strategy/behavioral-design.md - comprehensive behavioral product design analysis
+  - Analyzed GTD methodology's behavioral psychology principles:
+    - Cognitive load theory (externalization reduces anxiety)
+    - Decision fatigue (upfront thinking vs execution-time decisions)
+    - Context triggers (environment-driven behavior vs willpower)
+  - Designed habit loop (Cue-Routine-Reward) for product:
+    - Time/context/behavior/emotion triggers
+    - Minimum Viable Habit: Capture → Plan → Review stages
+    - Intrinsic rewards over gamification (Things 3's restraint approach)
+  - Applied behavioral economics principles:
+    - Loss aversion: 7-day retention threshold, value accumulation
+    - Commitment-consistency: Today as micro-commitment, commitment escalation ladder
+    - Present bias: Make future visible, instant gratification for small wins
+    - Social proof and anchoring (used carefully)
+  - Designed ethical boundaries:
+    - White-hat vs dark patterns distinction
+    - "Calm-driven habits" vs "anxiety-driven usage"
+  - Created behavior design checklist for feature evaluation
+  - Provided short/medium/long-term action recommendations
+  - Referenced core principles from .claude/skills/behavioral-product-design/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/behavioral-design.md (new - 488 lines)
+- **Learnings for future iterations:**
+  - Jackson Shuttleworth's 7-day principle: loss aversion kicks in after 7 consecutive days of use
+  - GTD itself is behavioral science: capture reduces Zeigarnik Effect, clarify reduces decision fatigue
+  - Habit Loop model (Duhigg): Cue → Routine → Reward is the core framework
+  - "Bend not break" philosophy: meet users where they are, don't demand perfection
+  - Behavioral design has ethical boundaries: help users achieve THEIR goals, not manipulate
+  - Restraint is the hardest design choice: Things 3 has no gamification but high retention
+  - Day 1-7 journey is the highest priority for retention design
+---
+
+## 2026-02-01 - US-010
+- What was implemented:
+  - Created docs/product-strategy/startup-ideation.md - comprehensive startup ideation validation analysis
+  - Analyzed whether GTD tools market is a "tar pit" (焦油坑):
+    - Identified 5 tar pit characteristics all present in task management market
+    - Concluded: market IS a classic tar pit, but breakout is possible with different strategy
+  - Conducted "Why Now" analysis:
+    - Technology shift: AI creates "active guidance" vs "passive recording" opportunity
+    - Behavior shift: post-pandemic focus anxiety, "calm productivity" desire
+    - Timing analysis: 2024-2026 as window period before AI tools commoditize
+  - Evaluated market size:
+    - $4.5B total market, ~$700M-$900M personal segment
+    - ~10,000 paid users needed for $1M ARR (achievable for indie dev)
+  - Applied unique information/experience framework:
+    - Advantages: heavy GTD user, Things 3 deep understanding, AI capability, indie dev identity
+    - Traps to avoid: personal need ≠ market need, ability ≠ opportunity
+  - Identified 5 key insights:
+    1. Tar pits can be entered with different strategy (new category, not better tool)
+    2. Problem definition determines success (task anxiety vs task management)
+    3. Indie dev's real advantage is "can say no"
+    4. Timing matters more than idea
+    5. Positioning differentiation > feature innovation
+  - Provided tar pit breakout strategies:
+    1. Don't compete in tar pit (define new category)
+    2. Time arbitrage (AI window)
+    3. Niche market focus
+    4. Maximize indie dev advantages
+  - Included honest self-assessment:
+    - Favorable: market size, timing window, differentiation space
+    - Unfavorable: classic tar pit, strong competitors, long profitability cycle
+    - Conclusion: risk controllable, worth trying
+  - Referenced core principles from .claude/skills/startup-ideation/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/startup-ideation.md (new - 431 lines)
+- **Learnings for future iterations:**
+  - Tar pit (焦油坑) framework: low entry barrier + high competition + low success rate = tar pit
+  - "Why Now" is crucial: technology shifts, behavior changes, timing windows
+  - Dalton Caldwell: unique personal experience is the best source of startup ideas
+  - Ryan Hoover: "What can you build today that couldn't be built yesterday?"
+  - Honest self-assessment is valuable: list both favorable and unfavorable factors
+  - For tar pit markets: define new category rather than compete in existing one
+  - Indie dev advantage: can say "no" to features, users, trends that don't fit
+  - Business model validation: Freemium needs ~333K users at 3% conversion for $1M ARR
+---
+
+## 2026-02-01 - US-011
+- What was implemented:
+  - Created docs/product-strategy/startup-pivoting.md - comprehensive Pivot decision framework
+  - Analyzed current "Things 3 clone" strategy sustainability:
+    - Advantages: proven demand, clear direction, executable
+    - Limitations: insufficient differentiation, passive positioning, price ceiling, brand recognition difficulty
+  - Applied Four Ps framework analysis:
+    - Problem: from "need task management" to "need mental peace"
+    - Persona: from "Things 3 users" to "anxious knowledge workers"
+    - Product: from "GTD clone" to "calm experience tool" or "AI assistant"
+    - Positioning: from "Things 3 alternative" to "mind-like-water companion"
+  - Identified 10% vs 200% Pivot distinction:
+    - 10% Pivot (limited): add features, improve UI, adjust pricing
+    - 200% Pivot (effective): change category, change problem definition, change target persona
+  - Listed 4 potential Pivot directions:
+    1. 心智平静工具 (Mental peace tool) - from task management to mental management
+    2. AI 原生任务助手 (AI-native task assistant) - from passive recording to active guidance
+    3. 极简 Today-Only (Minimalist Today-only) - extreme simplicity
+    4. 垂直领域深耕 (Vertical focus) - e.g., programmer-specific GTD
+  - Created Pivot signal monitoring system:
+    - Pivot signals: 7d retention <20%, conversion <1%, NPS <20, differentiation <50%
+    - Continue signals: 7d retention >40%, conversion >3%, NPS >50
+  - Provided complete 6-step Pivot decision process:
+    1. Signal collection (quantitative + qualitative)
+    2. Diagnosis analysis (Four Ps checklist)
+    3. Pivot magnitude judgment (10% vs 200%)
+    4. Pivot hypothesis design (with template)
+    5. Minimum validation (landing page, interviews, prototype, MVP)
+    6. Execution decision (with checklist)
+  - Referenced core principles from .claude/skills/startup-pivoting/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/startup-pivoting.md (new - 609 lines)
+- **Learnings for future iterations:**
+  - Stewart Butterfield: "The decision is about have you exhausted the possibilities?"
+  - Todd Jackson: "Most founders do 10% pivot when they need 200% pivot"
+  - Four Ps framework: Problem, Persona, Product, Positioning - usually need to change multiple together
+  - Sunk cost is not a reason to continue - evaluate like an outside investor
+  - Pivot needs hypothesis, not random attempts - diagnose → hypothesize → validate → execute
+  - Pivot is not failure, it's learning application - each attempt produces insights
+  - startup-ideation.md already referenced this doc for Pivot trigger conditions
+---
+
+## 2026-02-01 - US-012
+- What was implemented:
+  - Created docs/product-strategy/measuring-pmf.md - comprehensive PMF measurement guide
+  - Summarized 10 core principles from .claude/skills/measuring-product-market-fit/SKILL.md:
+    1. Sean Ellis "disappointment" survey (40% "very disappointed" threshold)
+    2. Retention as ultimate metric (flatten curve, smile curve)
+    3. PMF is obvious when you have it
+    4. PMF can be lost over time
+    5. Reference customers validate PMF (15-25 for B2C)
+    6. PMF exists in segments, not universally
+    7. PMF requires distribution, not just retention
+    8. PMF is multi-stage (4 levels from nascent to extreme)
+    9. Look for customer "pull" not polite interest
+    10. No outage outrage = no PMF
+  - Designed Sean Ellis survey questionnaire specifically for Petal GTD:
+    - Core question + 5 auxiliary questions
+    - Survey timing and data interpretation guidance
+  - Defined 5-level PMF milestone system:
+    - Level 0: Pre-PMF (product development)
+    - Level 1: 3-5 core users with qualitative signals
+    - Level 2: 5-25 users, >30% very disappointed
+    - Level 3: 25-100 users, >35% very disappointed, organic referrals
+    - Level 4: 100+ users, ready to scale
+  - Created retention tracking framework with cohort analysis
+  - Provided scale growth decision framework with checklist
+  - Identified indie developer PMF challenges and mitigation strategies
+  - Analyzed 5 key insights:
+    1. 40% rule is directional, not absolute (sample size matters)
+    2. Retention curve shape > absolute numbers
+    3. PMF segment priority over universal PMF
+    4. Pull vs Push is the most honest signal
+    5. Pivot signals connect to PMF measurement
+  - Created 4-week and 3-month action plans
+  - Connected to north-star-metrics.md, startup-pivoting.md, behavioral-design.md
+  - Referenced core principles from .claude/skills/measuring-product-market-fit/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/product-strategy/measuring-pmf.md (new - 401 lines)
+- **Learnings for future iterations:**
+  - Sean Ellis survey should only be sent to users who have used product for 14+ days
+  - PMF measurement and Pivot decisions are tightly connected - cross-reference both docs
+  - For indie developers: quality > quantity in early user research (5 deep interviews > 100 surveys)
+  - Reference customer count: 15-25 for B2C products before public launch
+  - Scale growth prerequisites: Sean Ellis >40%, 7d retention >40%, 15+ reference customers, scalable channel
+  - Early stage (<10 users): focus on qualitative signals; 10-50 users: start quantitative; 50+: rely on data
+  - "Outage test": if product goes down and nobody complains, you don't have PMF
+---
+
+## 2026-02-01 - US-013
+- What was implemented:
+  - Created docs/user-research/problem-definition.md - comprehensive problem definition analysis
+  - Analyzed 5 pain points through dogfooding:
+    1. 任务"永远在等待" - tasks always waiting, tool doesn't help with decisions
+    2. 完美主义瘫痪 - perfectionist paralysis from GTD's organization burden
+    3. 回顾变成审判 - review becomes judgment, emphasizing failure not success
+    4. 上下文切换摩擦 - context switching friction, capture interrupts execution
+    5. 移动端割裂 - mobile gap breaks GTD habit continuity
+  - Defined 2 target user personas:
+    - Primary: 焦虑的知识工作者 (Anxious knowledge worker) - 25-45, high-tech familiarity, tried many tools
+    - Secondary: GTD 实践者 (GTD practitioner) - already successful with GTD, seeking better tool
+  - Created core Problem Statement:
+    - "焦虑的知识工作者在每天面对大量待办事项时，需要快速知道此刻应该做什么并感到掌控感，因为失控感严重影响生产力和心理健康，但现有任务管理工具增加了组织负担和心理焦虑，而非减轻它。"
+    - Simplified: tools make users MORE anxious, not less
+  - Distinguished Must Have vs Nice to Have problems:
+    - Must Have: quick capture, clear Today view, completion achievement, data security
+    - Nice to Have: smart priority, weekly review guidance, focus mode, mobile, habit formation
+  - Identified 5 key insights:
+    1. Problem is "mental management" not "task management"
+    2. Tool should "actively guide" not "passively record"
+    3. Perfectionism is GTD tool's enemy
+    4. Indie dev's dogfooding advantage
+    5. Distinguish user problems from business problems
+  - Provided short/medium/long-term action recommendations
+  - Referenced core principles from .claude/skills/problem-definition/SKILL.md
+  - Followed document structure template (概述、核心原则、现状分析、关键洞察、行动建议、思考问题、参考资料)
+- Files changed:
+  - docs/user-research/problem-definition.md (new - 418 lines)
+- **Learnings for future iterations:**
+  - Bob Moesta: "Struggling moments create demand" - study user context that makes behavior rational
+  - Problem definition needs to separate user problems from business problems (Christopher Miller)
+  - Dogfooding is a unique indie dev advantage - experience problems firsthand
+  - The real problem is often deeper than what users say: "焦虑" not "任务太多"
+  - "Must Have" vs "Nice to Have" distinction helps prioritize features
+  - Problem Statement format: [Target user] in [context] needs [solution] because [importance] but [obstacle]
+  - Connect problem definition to product-vision.md ("心智像水") and other strategy docs
+---
+
+## 2026-02-01 - US-014
+- What was implemented:
+  - Created docs/user-research/user-interviews.md - comprehensive user interview methodology guide
+  - Documented 15 core principles from .claude/skills/conducting-user-interviews/SKILL.md:
+    1. Collect stories, not opinions (Teresa Torres)
+    2. Only interview people who've taken action (Bob Moesta)
+    3. Watch, don't just ask (Gustaf Alstromer)
+    4. Avoid pitching (Jeff Weinstein)
+    5. Falsify, don't validate (Judd Antin)
+    6. Never ask what they want built
+    7. Probe for the emotion (Nan Yu)
+    8. Drop the discussion guide - use Four Forces (Bob Moesta)
+    9. Right-size your sample: 7-14 interviews (Shaun Clowes)
+    10. Expect 90% rejection
+    11. Get direct exposure - 30 customers before decisions (Marty Cagan)
+    12. Respond with extreme speed (Jeff Weinstein)
+    13. Interview the non-users (Mihika Kapoor)
+    14. Test willingness to pay
+    15. Co-create with lighthouse users (Tanguy Crusson)
+  - Created comprehensive interview question template with 6 sections:
+    - A. Opening & trust building (5 min)
+    - B. Historical stories (15 min)
+    - C. Daily behaviors (15 min)
+    - D. Pain points & unmet needs (10 min)
+    - E. Solution validation (5 min)
+    - F. Closing (5 min)
+  - Documented 6 strategies for indie developers to find interview subjects:
+    1. Personal network approach
+    2. Online community mining (Reddit, Twitter, V2EX, 知乎, 即刻)
+    3. Competitor user outreach
+    4. Early user conversion
+    5. Content marketing funnel
+    6. Lighthouse user co-creation
+  - Created observation vs interview method comparison table
+  - Designed 3-phase Petal GTD user research plan:
+    - Phase 1: Problem validation (Week 1-2)
+    - Phase 2: Solution exploration (Week 3-4)
+    - Phase 3: Product validation (post-launch)
+  - Provided research templates (interview notes, summary)
+  - Identified 5 key insights about user research
+  - Connected to problem-definition.md, measuring-pmf.md, product-vision.md
+- Files changed:
+  - docs/user-research/user-interviews.md (new - 687 lines)
+- **Learnings for future iterations:**
+  - Teresa Torres: "Interviewing is a grossly underestimated skill" - collect stories, not opinions
+  - Bob Moesta: "Only talk to people who've already tried to make progress" - behavior > intention
+  - Four Forces framework (Push, Pull, Anxiety, Habit) replaces rigid discussion guides
+  - 7-14 interviews is the sweet spot - less is insufficient, more has diminishing returns
+  - Observation reveals what users don't know about themselves - combine with interviews
+  - Lighthouse users (5-10) for long-term co-creation are more valuable than one-time interviews
+  - Non-users and churned users often provide more valuable insights than active users
+  - The skill file references/guest-insights.md contains all 64 insights from 43 guests
+---
+
+## 2026-02-01 - US-015
+- What was implemented:
+  - Created docs/user-research/survey-design.md - comprehensive survey design guide
+  - Documented 6 core principles from .claude/skills/designing-surveys/SKILL.md:
+    1. NPS has scientific flaws, CSAT is more reliable (Judd Antin)
+    2. Force prioritization with constraints - pick only 3 (Nicole Forsgren)
+    3. Survey best customers at right time - 3-6 months (Gia Laudi)
+    4. Onboarding surveys can improve conversion by 5% (Laura Schaffer)
+    5. Avoid double-barreled questions (Nicole Forsgren)
+    6. Use MaxDiff for feature prioritization (Madhavan Ramanujam)
+  - Created PMF survey template with Sean Ellis method:
+    - Core "disappointment" question + 5 auxiliary questions
+    - Survey timing guidance (14+ days usage)
+    - Data analysis framework
+  - Documented NPS best practices when it must be used:
+    - When to use NPS vs CSAT
+    - Industry benchmarks for SaaS
+    - Combining NPS with CSAT for validation
+  - Provided sample size requirements for different stages:
+    - 0-50 users: focus on qualitative
+    - 50-200 users: start quantitative with ±15% error
+    - 200+ users: pursue statistical significance
+  - Recommended indie developer survey tools:
+    - Free: Tally (recommended), Google Forms
+    - Paid: Typeform, SurveyMonkey, Refiner
+  - Identified 5 key insights:
+    1. Question quality determines data value
+    2. Qualitative before quantitative
+    3. Onboarding surveys are underrated growth lever
+    4. Alternative question reveals competitive landscape
+    5. Surveys are also user education opportunity
+  - Connected to measuring-pmf.md, user-interviews.md, problem-definition.md, competitive-analysis.md
+- Files changed:
+  - docs/user-research/survey-design.md (new - 569 lines)
+- **Learnings for future iterations:**
+  - Judd Antin: NPS is marketing industry's self-marketing - CSAT is scientifically better
+  - Laura Schaffer: "good friction" in signup can improve conversion 5%
+  - MaxDiff method: show 4-5 options, pick most/least important, repeat 6-8 rounds
+  - 100-point allocation is a simpler alternative to MaxDiff
+  - Sample size reality: early stage (0-50 users) should focus on qualitative, not chase statistical significance
+  - Tally is recommended as free survey tool - unlimited forms, good UX
+  - Survey timing matters: 3-6 months for satisfaction, 14+ days for PMF, immediate for onboarding
+---
+
+## 2026-02-01 - US-016
+- What was implemented:
+  - Created docs/user-research/feedback-analysis.md - comprehensive user feedback analysis guide
+  - Documented 10 core principles from .claude/skills/analyzing-user-feedback/SKILL.md:
+    1. Feedback is a river, not a lake (Shaun Clowes)
+    2. Users lie unintentionally (Bret Taylor)
+    3. Cluster by behavior, don't segment by demographics (Bob Moesta)
+    4. Every support ticket is a product failure (Geoff Charles)
+    5. Silent signals matter (Ramesh Johari)
+    6. Filter the 80% noise (Jen Abel)
+    7. Aggregate across all channels (Brian Balfour)
+    8. Talk to churned users (Uri Levine)
+    9. Prioritize future users over vocal minorities (Tamar Yehoshua)
+    10. Make insights stick with memification (Yuhki Yamashata)
+  - Planned Petal GTD feedback collection channels:
+    - In-product feedback (Crisp/Intercom, NPS/CSAT popups)
+    - Social media monitoring (Reddit, Twitter/X, V2EX, 知乎, 即刻, 少数派)
+    - App Store review monitoring
+    - Support ticket analysis
+    - User interviews
+  - Provided feedback classification and prioritization framework:
+    - Priority scoring matrix (frequency × severity × vision alignment × feasibility)
+    - Feedback to action conversion process
+    - User behavior clustering approach
+  - Discussed Reddit/Twitter mining strategies with specific subreddits and search queries
+  - Created feedback collection maturity model (Level 0-5)
+  - Provided short/medium/long-term action recommendations
+- Files changed:
+  - docs/user-research/feedback-analysis.md (new - 663 lines)
+- **Learnings for future iterations:**
+  - 56 guests contributed 64 insights on feedback analysis - very rich reference material
+  - Key insight: "Users lie unintentionally" - need to translate feedback to underlying needs
+  - Churned users provide highest value feedback - prioritize them over active users
+  - 80/20 rule: 80% of feedback is noise based on old habits, 20% is actionable gold
+  - "Sound of silence" concept: non-responses often indicate mediocre experiences
+  - Feedback needs "freshness" - real-time response within 24 hours is ideal
+  - Establish feedback rhythm: 15min daily, 1hr weekly, 2hr monthly, half-day quarterly
+---
+
+## 2026-02-01 - US-017
+- What was implemented:
+  - Created docs/user-research/usability-testing.md - comprehensive usability testing guide
+  - Documented 8 core principles from .claude/skills/usability-testing/SKILL.md:
+    1. Fake it before you build it (Itamar Gilad) - Wizard of Oz, fake doors, smoke tests
+    2. Small samples reveal big friction (Melanie Perkins) - 10 random users is enough
+    3. Watch users, don't just ask them (Uri Levine) - observation > surveys
+    4. Test multiple options, not one (Kristen Berman) - relative comparison is key
+    5. Overcome creator bias (Guillermo Rauch) - builders overrate their products
+    6. Micro-level testing drives millions (Judd Antin) - 7 characters can make millions
+    7. Progress through testing stages (Itamar Gilad) - fish food → dogfood → alpha → beta
+    8. Make testing a team sport (Noah Weiss) - cross-functional live reactions
+  - Designed AI tools application section:
+    - AI-assisted prototype generation (Replit, v0.dev)
+    - AI simulated feedback (pre-screening, not replacement)
+    - Automated usability metrics (Hotjar, FullStory)
+  - Created 4 Petal GTD test scenarios:
+    1. First-time user 10-minute experience
+    2. Daily usage flow
+    3. Weekly review flow
+    4. Focus mode (hypothesis validation with fake door)
+  - Provided comprehensive usability testing checklist (before/during/after)
+  - Identified 5 key insights and common mistakes
+  - Connected to user-interviews.md, survey-design.md, problem-definition.md
+- Files changed:
+  - docs/user-research/usability-testing.md (new - 545 lines)
+- **Learnings for future iterations:**
+  - Nielsen Norman's "5 users find 85% of problems" - small scale testing is effective
+  - Fake door testing is the cheapest validation: add a button, measure clicks
+  - Always test multiple design options - single design testing gives unreliable results
+  - Creator bias is real: "You tend to overrate how well your products work"
+  - Micro-level details (button text, CTA wording) can have outsized business impact
+  - Testing stages: fish food (team) → dogfood (company) → alpha → beta → public
+  - AI can help generate prototypes quickly but cannot replace real user observation
+---
+
+## 2026-02-01 - US-018
+- What was implemented:
+  - Created docs/execution/writing-prds.md - comprehensive PRD writing guide
+  - Documented 7 core principles from .claude/skills/writing-prds/SKILL.md:
+    1. Lead with problem and context (Maggie Crowley)
+    2. PR/FAQ forces clarity (Bill Carr)
+    3. Demos before memos in AI age (Aparna Chennapragada)
+    4. Evals as living PRDs (Hamel Husain & Shreya Shankar)
+    5. Keep it lightweight for action (Eric Simons)
+    6. PRDs demonstrate craft (Vikrama Dhiman)
+    7. AI can scaffold the basics (Claire Vo)
+  - Analyzed current project's PRD patterns (tasks/prd-product-docs.md)
+  - Provided simplified PRD template for indie developers with 6 sections:
+    - Problem (Why), Solution (What), Success Criteria, Key Decisions, Prototype/Demo, Acceptance Criteria
+  - Discussed AI-era PRD workflow: rambling → prototype → validate → formalize
+  - Connected to working-backwards.md (PR/FAQ method)
+  - Identified 5 key insights about PRD writing
+- Files changed:
+  - docs/execution/writing-prds.md (new - 254 lines)
+- **Learnings for future iterations:**
+  - Maggie Crowley: "Why does it matter now?" is the most important PRD section
+  - Live PRD (v0/Replit prototypes) > static documents for UI/AI features
+  - Dan Shipper: In AI coding era, PRD writing becomes the core engineering skill
+  - PRD is a decision log, not just a spec - record "why" not just "what"
+  - Lightweight PRDs focused on outcomes > exhaustive 30-page docs nobody reads
+  - For AI products, executable evals can replace static requirements
+  - AI can help draft PRD basics (user stories, scope) - humans focus on strategy
+---
+
+## 2026-02-01 - US-019
+- What was implemented:
+  - Created docs/execution/specs-and-designs.md - comprehensive specs and design writing guide
+  - Documented 9 core principles from .claude/skills/writing-specs-designs/SKILL.md:
+    1. Low-fidelity sketches drive collaboration (Christina Wodtke)
+    2. Well-shaped specs clarify without over-specifying (Ryan Singer)
+    3. Prototype to feel the product (Tamar Yehoshua)
+    4. Code prototypes over static mocks (Noah Weiss)
+    5. Products live in the pixels (Nikita Bier)
+    6. Optimize every tap (Nikita Bier)
+    7. Use fat marker sketches (Ryan Singer)
+    8. Shortcuts become permanent (Tom Conrad)
+    9. PMs should learn to sketch (Ravi Mehta)
+  - Analyzed low-fi vs high-fi design trade-offs for different scenarios
+  - Provided indie developer design flow: 想法 → 粗笔草图 → 代码原型 → 迭代 → 正式开发
+  - Created decision matrix for "when to write specs vs direct coding"
+  - Included design spec template for indie developers
+  - Connected to writing-prds.md, product-taste.md, product-vision.md
+- Files changed:
+  - docs/execution/specs-and-designs.md (new - 333 lines)
+- **Learnings for future iterations:**
+  - Christina Wodtke: "Drawing badly" invites participation - low-fi is a communication strategy
+  - Ryan Singer: A good spec has 10 or fewer "moving pieces"
+  - Tom Conrad: "Temporary" design shortcuts often become 30-year product legacies
+  - For indie devs: skip Figma, go directly from sketch to code prototype
+  - v0.dev and Replit enable fast code prototyping without design phase
+  - Always test on real device - GTD app experience must be felt, not imagined
+  - Record design decisions with "why" - future self will thank you
+---
+
+## 2026-02-01 - US-020
+- What was implemented:
+  - Created docs/execution/scoping-and-cutting.md - comprehensive scoping and cutting guide
+  - Documented 8 core principles from .claude/skills/scoping-cutting/SKILL.md:
+    1. Use appetite, not estimates (Ryan Singer)
+    2. MVP is a validation tool (Eric Ries)
+    3. Cut the list in half, then half again (Eric Ries)
+    4. Fixed time, small teams (Jason Fried)
+    5. Build the scooter, not the axle (Eeke de Milliano)
+    6. Use Wizard of Oz testing (Crystal W)
+    7. Kill projects that don't finish in time (Jason Fried)
+    8. Build the option to pivot into the process (Paige Costello)
+  - Analyzed Petal GTD current features:
+    - Core: Inbox, Today, Quick Add, Projects
+    - Supporting: Upcoming, Areas, Logbook, Themes
+    - Nice-to-have: Tags, Repeat tasks, Notifications
+  - Provided feature necessity evaluation framework (5 questions)
+  - Detailed analysis of Areas and Tags - potential simplification candidates
+  - Explained MLP (Minimum Lovable Product) > MVP distinction
+  - 5 key insights:
+    1. MLP > MVP for indie developers
+    2. Complexity is the enemy
+    3. Time-box is the best scope control tool
+    4. Subtraction often more valuable than addition
+    5. Indie dev advantage: "can say no"
+  - Created 5-step feature cutting decision framework
+  - Listed "Not doing" items: collaboration, project management, notes, calendar, social
+  - Provided short/medium/long-term action recommendations
+- Files changed:
+  - docs/execution/scoping-and-cutting.md (new - 389 lines)
+- **Learnings for future iterations:**
+  - Ryan Singer's "appetite" concept: fixed time, variable scope is better than fixed scope, variable time
+  - Eric Ries: "Cut in half, cut in half again" - founders always overestimate "minimum"
+  - Anton Osika: MLP (Minimum Lovable Product) concept - "lovable" > "viable"
+  - Dharmesh Shah's "one-in, one-out" rule for features - keep complexity constant
+  - Gibson Biddle: < 5% usage features should be removed
+  - Matt LeMay: "Impact is often achieved through subtraction" - look for steps to remove
+  - "Not doing" list is more important than "to do" list for indie developers
+  - Connect to product-vision.md: every feature should serve "mind like water" vision
+---
+
+## 2026-02-01 - US-021
+- What was implemented:
+  - Created docs/execution/shipping-products.md - comprehensive product shipping guide
+  - Documented 10 core principles from .claude/skills/shipping-products/SKILL.md:
+    1. Speed is a signal of competence (Nan Yu)
+    2. Ship to get feedback (Dylan Field)
+    3. Speed and stability move together (Nicole Forsgren)
+    4. 99% done is 0% done (Dmitry Zlokazov)
+    5. Ask why you can't ship tomorrow (Nick Turley)
+    6. Use quality checklists (Matt MacInnis)
+    7. Ship to learn, then polish (Nick Turley)
+    8. Tempo matters more than org design (Patrick Campbell)
+    9. Perfect execution validates strategy (Naomi Gleit)
+    10. Small consistent gains compound (Keith Yandell)
+  - Analyzed current product readiness across 5 dimensions (core features, UX, stability, data, payments)
+  - Identified key shipping blockers: perfectionism, unclear differentiation, payment integration
+  - Planned 3-phase release strategy:
+    1. Closed Beta (2-4 weeks) - 5-15 deep users
+    2. Open Beta (4-8 weeks) - 50-100 users
+    3. Product Hunt launch - after PMF validation
+  - Created comprehensive launch checklists (pre-launch, launch day, post-launch)
+  - Discussed Product Hunt strategy: timing, preparation, execution, follow-up
+  - Identified 5 key insights on indie developer shipping advantages
+  - Connected to measuring-pmf.md, startup-pivoting.md, user-interviews.md, feedback-analysis.md
+- Files changed:
+  - docs/execution/shipping-products.md (new - 451 lines)
+- **Learnings for future iterations:**
+  - 47 product leaders contributed 55 insights on shipping - very rich reference material
+  - Dmitry Zlokazov: "99% done is closer to 0% than 100%" - finish and ship before celebrating
+  - Nick Turley: "You won't know what to polish until after you ship" - especially for AI products
+  - Nicole Forsgren: Faster shipping = more stability (smaller blast radius, easier debugging)
+  - Julia Schottenstein: "Worse is better, tech debt is a champagne problem" - combat perfectionism
+  - Staged rollout pattern: internal team (5-10) → trusted testers (~500) → Labs → public
+  - Product Hunt timing: PST 00:01, Tuesday/Wednesday, with pre-built community support
+  - Indie dev advantage: one person decides and executes, no bureaucratic approval chains
+---
+
+## 2026-02-01 - US-022
+- What was implemented:
+  - Created docs/execution/timeline-management.md - comprehensive time management guide for indie developers
+  - Documented 10 core principles from .claude/skills/managing-timelines/SKILL.md:
+    1. Treat real deadlines as P0 (Nan Yu)
+    2. Commit to phases, not distant delivery dates (Annie Pearl)
+    3. Ship early, iterate with remaining time (Nan Yu)
+    4. Use hill charts to track uncertainty (Jason Fried)
+    5. Manufacture deadlines to create momentum (Laura Modi)
+    6. Challenge hidden padding in estimates (Dylan Field)
+    7. Account for the planning fallacy (Nir Eyal)
+    8. Don't ask for extensions (Seth Godin)
+    9. Review weekly with RAG status (Brian Chesky)
+    10. Expect AI timelines to be uneven (Aparna Chennapragada)
+  - Analyzed indie developer time allocation challenges:
+    - "Productive procrastination" symptoms and traps
+    - Common estimation pitfalls (anchoring, optimism bias, Parkinson's law)
+  - Provided 4 task estimation techniques:
+    1. Task decomposition method
+    2. Historical data method
+    3. Time-box method
+    4. PERT estimation method
+  - Created strategies to avoid "productive procrastination":
+    - Daily "one thing" focus
+    - Time blocking
+    - 2-minute rule
+    - Weekly review
+    - External accountability
+  - Provided time management checklist (daily/weekly/monthly)
+  - Connected to scoping-and-cutting.md (time-box), okrs-and-goals.md (goal setting)
+- Files changed:
+  - docs/execution/timeline-management.md (new - 581 lines)
+- **Learnings for future iterations:**
+  - Ada Chen Rekhi: "5-minute rule" - commit to just 5 minutes of important task early in the day
+  - Nan Yu: "10% working version" - if 10-day task, day 1 should have working prototype
+  - Planning fallacy: tasks take 3x longer due to interruptions, not complexity
+  - "Hill chart" concept: left side = exploration (uncertain), right side = execution (certain)
+  - Time management is really attention management - protect deep work time
+  - Phase-based commitments are more reliable than long-term delivery dates
+  - Indie developers need manufactured deadlines (public commitments, pre-sales, etc.)
+  - Weekly RAG status review is a simple but effective project management tool
+---
+
+## 2026-02-01 - US-023
+- What was implemented:
+  - Created docs/execution/product-operations.md - comprehensive product operations guide for indie developers
+  - Documented 5 core principles from .claude/skills/product-operations/SKILL.md:
+    1. Product ops bridges product and operations (Brian Tolkin)
+    2. Product ops creates systems for teams to thrive (Christine Itwaru)
+    3. Product ops enables scaling velocity (Geoff Charles)
+    4. Product ops informs, not decides (Melissa Perri + Denise Tilles)
+    5. Product ops helps with standardization and insights at scale (Melissa Perri)
+  - Analyzed indie developer applicability:
+    - Applicable: user insight collection, standardization, data infrastructure, release management
+    - Not applicable: cross-team coordination, scaling training (no team)
+  - Provided user feedback loop design:
+    - Multi-channel collection strategy
+    - Classification system (Bug, Feature, Question, Praise, Pricing)
+    - Severity levels (P0-P3) with response times
+    - Analysis framework (frequency, trend, user segment)
+    - Decision matrix (do now, plan, defer, don't do)
+    - Closing the loop (responding to users)
+  - Designed data-driven decision infrastructure:
+    - Metrics hierarchy (North Star, guardrails, operational)
+    - Tool recommendations (PostHog for starter)
+    - Dashboard designs (daily, weekly, monthly)
+    - Analysis rhythm (5min daily, 30min weekly, 2hr monthly)
+  - Identified 5 key insights:
+    1. Core is "systematize yourself" for indie developers
+    2. User feedback loop is the heart of product ops
+    3. Data-driven means "accessible" not "decide by data"
+    4. Release management is underrated operational work
+    5. Building systems for your future self
+  - Created comprehensive checklists (daily, weekly, monthly, per-release)
+  - Connected to north-star-metrics.md, feedback-analysis.md, shipping-products.md, timeline-management.md
+- Files changed:
+  - docs/execution/product-operations.md (new - 628 lines)
+- **Learnings for future iterations:**
+  - Product operations for indie developers = "systematize yourself"
+  - Christine Itwaru: Product ops is about creating systems that allow you to thrive in product management
+  - Melissa Perri: Product ops informs but doesn't make decisions - data is a tool, not master
+  - Brian Tolkin: Product ops originated at Uber as bridge between product and operations
+  - User feedback loop: collect → classify → analyze → decide → implement → feedback user
+  - Data rhythm: 5min daily check, 30min weekly review, 2hr monthly deep dive
+  - Building systems today is a gift to your future self
+  - Independent developers need product ops thinking, not full product ops function
+---
+
+## 2026-02-01 - US-024
+- What was implemented:
+  - Created docs/README.md - comprehensive index file for all 21 product management documents
+  - Organized documents by category with table format:
+    - Product Strategy (11 docs): North Star, Vision, Roadmap, OKRs, Competitive Analysis, etc.
+    - User Research (5 docs): Problem Definition, User Interviews, Survey Design, etc.
+    - Execution (5 docs): PRD Writing, Specs & Designs, Scoping, Shipping, etc.
+  - Added one-line description for each document
+  - Created suggested reading order in 6 phases:
+    1. Understanding product positioning (1-2 days)
+    2. Validating market opportunity (2-3 days)
+    3. Planning execution strategy (2-3 days)
+    4. Deepening product thinking (continuous)
+    5. Building user research capability (as needed)
+    6. Execution and shipping (as needed)
+  - Documented mapping between docs and .claude/skills directories
+  - Added usage guide section explaining how to use documents as decision reference, learning resource, and work templates
+- Files changed:
+  - docs/README.md (new - 169 lines)
+- **Learnings for future iterations:**
+  - All 21 documents now complete - this marks the end of the PRD
+  - Document index provides easy navigation and suggested learning path
+  - Mapping skills to docs helps understand methodology source
+  - The 6-phase reading order balances learning priority with practical applicability
+  - Index file serves as both navigation tool and meta-documentation of the knowledge system
+---
