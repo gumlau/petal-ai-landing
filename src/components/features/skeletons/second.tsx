@@ -15,20 +15,20 @@ export const SkeletonTwo = () => {
         transform: "rotateY(20deg) rotateX(20deg) rotateZ(-20deg)",
       }}
       className={cn(
-        "max-w-[85%] group h-full my-auto bg-neutral-100 dark:bg-neutral-900 mx-auto w-full p-3 rounded-2xl border border-neutral-300 dark:border-neutral-700 shadow-2xl flex flex-col mask-radial-from-50% mask-b-from-50%",
+        "max-w-[85%] group h-full my-auto bg-neutral-100 mx-auto w-full p-3 rounded-2xl border border-neutral-300 shadow-2xl flex flex-col mask-radial-from-50% mask-b-from-50%",
         "translate-x-10",
-        "[--pattern-fg:var(--color-neutral-950)]/5  dark:[--pattern-fg:var(--color-white)]/10"
+        "[--pattern-fg:var(--color-neutral-950)]/5"
       )}
     >
       <div className="flex gap-3 items-center">
         <IconCircleDashedCheck className="size-4" />
-        <p className="text-sm font-normal text-black dark:text-white">
+        <p className="text-sm font-normal text-black">
           Campaign Planner
         </p>
       </div>
-      <div className="relative  flex-1 bg-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 mt-4 border border-neutral-200 rounded-2xl">
+      <div className="relative  flex-1 bg-neutral-200 mt-4 border border-neutral-200 rounded-2xl">
         <Pattern />
-        <div className="absolute rounded-2xl translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:-translate-y-0 transition-all duration-300 inset-0 bg-white dark:bg-neutral-900 h-full w-full">
+        <div className="absolute rounded-2xl translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:-translate-y-0 transition-all duration-300 inset-0 bg-white h-full w-full">
           <Row
             icon={<IconCheck className="size-3 stroke-white fill-green-500" />}
             text="Fetching Data"
@@ -70,7 +70,7 @@ export const SkeletonTwo = () => {
 
 const GradientHr = () => {
   return (
-    <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-200 dark:via-neutral-800 to-transparent"></div>
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-200 to-transparent"></div>
   );
 };
 

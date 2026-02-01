@@ -14,7 +14,6 @@ export const SkeletonThree = () => {
           "absolute -inset-x-[150%] -inset-y-40",
           "[background-size:40px_40px]",
           "[background-image:linear-gradient(to_right,var(--color-neutral-200)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-neutral-200)_1px,transparent_1px)]",
-          "dark:[background-image:linear-gradient(to_right,var(--color-neutral-700)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-neutral-700)_1px,transparent_1px)]",
           "mask-radial-from-50% mask-t-from-50% mask-b-from-50%"
         )}
         style={{

@@ -18,7 +18,7 @@ export const SkeletonTwo = () => {
         <Item />
         <Item src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1760" />
         <Item containerClassName="from-black/50 via-transparent to-black/50">
-          <div className="h-full w-full bg-white dark:bg-neutral-900 rounded-[12px] flex items-center justify-center">
+          <div className="h-full w-full bg-white rounded-[12px] flex items-center justify-center">
             <LogoIcon className="size-12" />
           </div>
         </Item>
@@ -49,8 +49,8 @@ const Item = ({
   return (
     <div
       className={cn(
-        "w-full justify-self-center aspect-square rounded-xl border border-dashed border-neutral-200 dark:border-neutral-800 relative p-[1px]",
-        "[--pattern-fg:var(--color-neutral-950)]/5  dark:[--pattern-fg:var(--color-neutral)]/10"
+        "w-full justify-self-center aspect-square rounded-xl border border-dashed border-neutral-200 relative p-[1px]",
+        "[--pattern-fg:var(--color-neutral-950)]/5"
       )}
     >
       <motion.div

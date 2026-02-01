@@ -11,7 +11,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "max-w-l mx-auto bg-neutral-50 dark:bg-neutral-800 rounded-lg",
+        "max-w-l mx-auto bg-neutral-50 rounded-lg",
         className
       )}
     >
@@ -47,7 +47,7 @@ export const CardCTA = ({
   return (
     <button
       className={cn(
-        "size-5 md:size-10 shrink-0 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center active:scale-[0.98] transition duration-200",
+        "size-5 md:size-10 shrink-0 rounded-full border border-neutral-200 flex items-center justify-center active:scale-[0.98] transition duration-200",
         className
       )}
       {...rest}

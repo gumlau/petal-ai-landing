@@ -90,7 +90,7 @@ export const SkeletonOne = () => {
     <motion.div
       ref={ref}
       layout
-      className="flex-1 rounded-t-3xl gap-2 flex flex-col bg-neutral-100  dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 max-w-[20rem] lg:max-w-sm mx-auto w-full h-full absolute inset-x-0 p-2"
+      className="flex-1 rounded-t-3xl gap-2 flex flex-col bg-neutral-100 border border-neutral-200 max-w-[20rem] lg:max-w-sm mx-auto w-full h-full absolute inset-x-0 p-2"
     >
       {activeCards?.map((item, idx) => (
         <Card key={item?.title} {...item} />
@@ -121,7 +121,7 @@ const Card = ({
       initial={{ opacity: 0, y: -10, scale: 0.8 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.2 }}
-      className="p-4 shadow-black/10 gap-4 border bg-white dark:bg-neutral-800 border-transparent ring-1 rounded-[16px] ring-black/10 flex items-start"
+      className="p-4 shadow-black/10 gap-4 border bg-white border-transparent ring-1 rounded-[16px] ring-black/10 flex items-start"
     >
       <div
         className={cn(
@@ -135,10 +135,10 @@ const Card = ({
         {topIcon}
       </div>
       <div>
-        <p className="md:text-lg font-bold text-neutral-800 dark:text-neutral-200">
+        <p className="md:text-lg font-bold text-neutral-800">
           {title}
         </p>
-        <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 text-balance">
+        <p className="text-sm md:text-base text-neutral-600 text-balance">
           {description}
         </p>
         <div className="mt-2 flex flex-row flex-wrap gap-2">
@@ -153,7 +153,7 @@ const Card = ({
 
 const Tag = ({ text, icon }: { text: string; icon: React.ReactNode }) => {
   return (
-    <div className="flex items-center gap-1 w-fit rounded-sm px-1 py-0.5 border border-neutral-200 dark:border-neutral-700 text-sm">
+    <div className="flex items-center gap-1 w-fit rounded-sm px-1 py-0.5 border border-neutral-200 text-sm">
       {icon}
       <p className="text-xs text-neutral-500">{text}</p>
     </div>

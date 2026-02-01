@@ -27,24 +27,24 @@ export const SkeletonTwo = () => {
         transform: "rotateY(20deg) rotateX(20deg) rotateZ(-20deg)",
       }}
     >
-      <Circle className="flex items-center justify-center border-neutral-200 dark:border-neutral-700 shadow-sm">
+      <Circle className="flex items-center justify-center border-neutral-200 shadow-sm">
         <LogoIcon className="size-10 text-neutral-400" />
-        <RevolvingCard className="bg-white dark:bg-neutral-800">
+        <RevolvingCard className="bg-white">
           <IconBrandSlack className="size-8" />
         </RevolvingCard>
-        <RevolvingCard className="[--initial-position:80deg] [--translate-position:160px] [--orbit-duration:20s] bg-white dark:bg-neutral-800">
+        <RevolvingCard className="[--initial-position:80deg] [--translate-position:160px] [--orbit-duration:20s] bg-white">
           <IconBrandMeta className="size-8 text-blue-500" />
         </RevolvingCard>
-        <RevolvingCard className="[--initial-position:140deg] [--translate-position:180px] [--orbit-duration:15s] bg-white dark:bg-neutral-800">
+        <RevolvingCard className="[--initial-position:140deg] [--translate-position:180px] [--orbit-duration:15s] bg-white">
           <IconBrandInstagram className="size-8 text-red-500" />
         </RevolvingCard>
-        <RevolvingCard className="[--initial-position:240deg] [--translate-position:220px] [--orbit-duration:25s] bg-white dark:bg-neutral-800">
+        <RevolvingCard className="[--initial-position:240deg] [--translate-position:220px] [--orbit-duration:25s] bg-white">
           <SheetsIcon className="size-8" />
         </RevolvingCard>
 
         <RevolvingCard className="[--initial-position:20deg] [--translate-position:250px] [--orbit-duration:30s] size-auto ring-0 shadow-none bg-transparent w-60">
           <SkeletonCard
-            className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white dark:bg-neutral-800"
+            className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white"
             icon={<IconCircleDashedCheck className="size-4" />}
             title="Campaign Planner"
             description="Creates clear, ready-to-use campaign briefs using product info."
@@ -53,16 +53,16 @@ export const SkeletonTwo = () => {
 
         <RevolvingCard className="[--initial-position:60deg] [--translate-position:210px] [--orbit-duration:20s] size-auto ring-0 shadow-none bg-transparent w-60">
           <SkeletonCard
-            className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white dark:bg-neutral-800"
+            className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white"
             icon={<IconCircleDashedCheck className="size-4" />}
             title="Ready made solutions"
           />
         </RevolvingCard>
       </Circle>
-      <Circle className="shadow border-neutral-100  dark:border-neutral-700 size-60 bg-neutral-100/80 z-[9] dark:bg-neutral-800/80 relative"></Circle>
-      <Circle className="shadow border-neutral-100  dark:border-neutral-700 size-80 bg-neutral-100/60 z-[8] dark:bg-neutral-800/60"></Circle>
-      <Circle className="shadow border-neutral-100  dark:border-neutral-700 size-100 bg-neutral-100/40 z-[7] dark:bg-neutral-800/40"></Circle>
-      <Circle className="shadow border-neutral-100  dark:border-neutral-700 size-120 bg-neutral-100/20 z-[6] dark:bg-neutral-800/20"></Circle>
+      <Circle className="shadow border-neutral-100 size-60 bg-neutral-100/80 z-[9] relative"></Circle>
+      <Circle className="shadow border-neutral-100 size-80 bg-neutral-100/60 z-[8]"></Circle>
+      <Circle className="shadow border-neutral-100 size-100 bg-neutral-100/40 z-[7]"></Circle>
+      <Circle className="shadow border-neutral-100 size-120 bg-neutral-100/20 z-[6]"></Circle>
     </div>
   );
 };
@@ -81,18 +81,18 @@ const SkeletonCard = ({
   return (
     <div
       className={cn(
-        "max-w-[85%] h-fit my-auto bg-transparent mx-auto w-full p-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl",
+        "max-w-[85%] h-fit my-auto bg-transparent mx-auto w-full p-3 rounded-2xl border border-neutral-200 shadow-2xl",
         className
       )}
     >
       <div className="flex gap-3 items-center">
         {icon}
-        <p className="text-xs font-normal text-black dark:text-white">
+        <p className="text-xs font-normal text-black">
           {title}
         </p>
       </div>
       {description && (
-        <p className="text-[10px] text-neutral-400 dark:text-neutral-400 font-normal mt-3">
+        <p className="text-[10px] text-neutral-400 font-normal mt-3">
           {description}
         </p>
       )}
@@ -110,7 +110,7 @@ const RevolvingCard = ({
   return (
     <div
       className={cn(
-        "size-10  flex absolute inset-0 m-auto items-center justify-center bg-white dark:bg-transparent  border border-transparent shadow-black/10 ring-1 ring-black/10 rounded-sm animate-orbit [--translate-position:120px] [--orbit-duration:10s]",
+        "size-10  flex absolute inset-0 m-auto items-center justify-center bg-white border border-transparent shadow-black/10 ring-1 ring-black/10 rounded-sm animate-orbit [--translate-position:120px] [--orbit-duration:10s]",
         className
       )}
     >
@@ -129,7 +129,7 @@ const Circle = ({
   return (
     <div
       className={cn(
-        "size-40 bg-white absolute inset-0 dark:bg-neutral-800  shrink-0 border z-[10] border-transparent rounded-full   m-auto",
+        "size-40 bg-white absolute inset-0 shrink-0 border z-[10] border-transparent rounded-full m-auto",
         className
       )}
     >

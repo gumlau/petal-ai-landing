@@ -84,13 +84,8 @@ export function DottedGlowBackground({
   };
 
   const detectDarkMode = (): boolean => {
-    const root = document.documentElement;
-    if (root.classList.contains("dark")) return true;
-    if (root.classList.contains("light")) return false;
-    return (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    );
+    // Always return false to force light mode
+    return false;
   };
 
   // Keep resolved colors in sync with theme changes and prop updates

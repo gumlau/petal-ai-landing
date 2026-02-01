@@ -52,18 +52,18 @@ const SkeletonCard = ({
   return (
     <div
       className={cn(
-        "max-w-[85%] h-fit my-auto bg-white dark:bg-neutral-900 mx-auto w-full p-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl",
+        "max-w-[85%] h-fit my-auto bg-white mx-auto w-full p-3 rounded-2xl border border-neutral-200 shadow-2xl",
         className
       )}
     >
       <div className="flex gap-3 items-center">
         {icon}
-        <p className="text-xs md:text-sm font-normal text-black dark:text-white">
+        <p className="text-xs md:text-sm font-normal text-black">
           {title}
         </p>
         {badge}
       </div>
-      <p className="text-[10px] md:text-sm text-neutral-500 dark:text-neutral-400 font-light mt-3">
+      <p className="text-[10px] md:text-sm text-neutral-500 font-light mt-3">
         {description}
       </p>
       <div className="flex items-center gap-2 flex-wrap mt-4">
@@ -77,7 +77,7 @@ const SkeletonCard = ({
 
 const Tag = ({ text }: { text: string }) => {
   return (
-    <div className="px-2 text-[10px] md:text-sm py-1 rounded-sm bg-neutral-200 dark:bg-neutral-700">
+    <div className="px-2 text-[10px] md:text-sm py-1 rounded-sm bg-neutral-200">
       {text}
     </div>
   );
